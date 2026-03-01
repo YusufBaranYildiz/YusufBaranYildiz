@@ -160,28 +160,59 @@ Antalya Belek Proje Yönetim Uygulaması.
 
 ---
 
-## 📊 GitHub İstatistikleri
+## 🎮 GitHub Space Shooter - Kontribüsyon Oyunu
 
-<p align="center">
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=YusufBaranYildiz&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats"/>
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YusufBaranYildiz&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages"/>
-</p>
+<div align="center">
+
+### 🎮 Benim GitHub Aktivitelerim Space Shooter Oyunu! 🚀
+
+![GitHub Space Shooter Game](game.gif)
+
+GitHub kontribüsyon grafiğim otomatik olarak bir **Galaga-tarzı space shooter** oyununa dönüştürülüyor!
+
+**Nasıl Çalışıyor?**
+- 📊 GitHub kontribüsyonlarım → Oyun düşmanları
+- 🚀 Uzay gemisi → Oyuncu
+- 💥 Daha çok kod = Daha güçlü düşmanlar
+- 🔫 Her gün otomatik güncelleniyor!
+
+[Kendi Oyununu Oluştur →](https://gh-space-shooter.kiyo-n-zane.com)
+
+</div>
 
 ---
 
-## 🔥 Contribution Streak
+## 📊 GitHub İstatistikleri
+
+<div align="center">
+
+### 📈 Genel İstatistikler
+
+| 📁 Repository | 🐍 Dil | 🎯 Odak | 📚 Eğitim |
+|:---:|:---:|:---:|:---:|
+| **8+** | **Python** | **ML/AI** | **8+ Sertifika** |
+
+### 🔥 Aktivite Durumu
+
+```
+👨‍💻 Aktif Kodlama      ████████░░ 88%
+📊 Proje Tamamlama    ███████░░░ 75%
+🤖 AI/ML Odağı        █████████░ 92%
+💾 Veri İşleme        ████████░░ 85%
+🧠 Derin Öğrenme      ███████░░░ 78%
+```
+
+### 🔥 Contribution Streak
 
 <p align="center">
 <img src="https://streak-stats.demolab.com/?user=YusufBaranYildiz&theme=tokyonight&hide_border=true" alt="GitHub Streak"/>
 </p>
 
----
+### 📊 Daha Detaylı İstatistikler
 
-## 🐍 Kontribüsyon Animasyonu
+Daha fazla bilgi için: [GitHub Profilimi Ziyaret Et](https://github.com/YusufBaranYildiz)
 
-<p align="center">
-<img src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake Animation"/>
-</p>
+</div>
 
 ---
 
@@ -189,7 +220,6 @@ Antalya Belek Proje Yönetim Uygulaması.
 
 ```
 ✅ Gelişmiş AI projeleri geliştirme
-✅ AI agentleri detaylıca öğrenme
 ✅ Derin Öğrenme konusunda uzmanlaşma
 ✅ Python ve ML bilgisini derinleştirme
 ✅ AI internship deneyimi kazanma
@@ -221,6 +251,7 @@ Antalya Belek Proje Yönetim Uygulaması.
 👨‍💻 8+ Repository
 🤖 10+ AI/ML Projesi
 🎓 8+ Profesyonel Sertifika
+🎮 GitHub Space Shooter Oyuncu
 📚 Aktif Öğrenime Devam
 💡 Problem Çözmeci
 🚀 Sürekli Gelişim
@@ -230,7 +261,17 @@ Antalya Belek Proje Yönetim Uygulaması.
 
 ---
 
+## 💡 Felsefem
 
+<p align="center">
+
+> **"Kod yazabilir herkes, ama anlamlı çözümler yaratmak sanat gerektirir."**
+>
+> *— Teknoloji hizmet etmelidir. İnsan merkezi olmalıdır.*
+
+</p>
+
+---
 
 ## 🌟 İlgi Alanlarım
 
@@ -243,6 +284,7 @@ Antalya Belek Proje Yönetim Uygulaması.
 💻 Full Stack Development
 🔬 Research & Innovation
 🌐 Web Applications
+🎮 Creative Coding
 ```
 
 </div>
@@ -252,7 +294,7 @@ Antalya Belek Proje Yönetim Uygulaması.
 ## 📊 Profil İstatistikleri
 
 <p align="center">
-<img src="https://komarev.com/ghpvc/?username=YusufBaranYildiz&color=0e75b6&style=flat" alt="Profile Views"/>
+<img src="https://komarev.com/ghpvc/?username=YusufBaranYildiz&color=FF6B9D&style=for-the-badge" alt="Profile Views"/>
 </p>
 
 ---
