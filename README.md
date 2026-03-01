@@ -26,7 +26,7 @@ Yazılım Mühendisliği 4. sınıf öğrencisiyim ve **Yapay Zekâ ve Makine Ö
 ## 🛠️ Tech Stack
 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=python,cpp,javascript,typescript,tensorflow,pytorch,jupyter,git,github,vscode,linux,docker&perline=6" alt="Tech Stack"/>
+<img src="https://skillicons.dev/icons?i=python,cpp,javascript,typescript,tensorflow,pytorch,jupyter,git,github,vscode&perline=6" alt="Tech Stack"/>
 </p>
 
 <div align="center">
@@ -160,23 +160,17 @@ Antalya Belek Proje Yönetim Uygulaması.
 
 ---
 
-## 🎮 GitHub Space Shooter - Kontribüsyon Oyunu
+## 🎮 GitHub Kontribüsyon 
 
 <div align="center">
 
-### 🎮 Benim GitHub Aktivitelerim Space Shooter Oyunu! 🚀
+
 
 ![GitHub Space Shooter Game](game.gif)
 
-GitHub kontribüsyon grafiğim otomatik olarak bir **Galaga-tarzı space shooter** oyununa dönüştürülüyor!
 
-**Nasıl Çalışıyor?**
-- 📊 GitHub kontribüsyonlarım → Oyun düşmanları
-- 🚀 Uzay gemisi → Oyuncu
-- 💥 Daha çok kod = Daha güçlü düşmanlar
-- 🔫 Her gün otomatik güncelleniyor!
 
-[Kendi Oyununu Oluştur →](https://gh-space-shooter.kiyo-n-zane.com)
+
 
 </div>
 
@@ -192,15 +186,6 @@ GitHub kontribüsyon grafiğim otomatik olarak bir **Galaga-tarzı space shooter
 |:---:|:---:|:---:|:---:|
 | **8+** | **Python** | **ML/AI** | **8+ Sertifika** |
 
-### 🔥 Aktivite Durumu
-
-```
-👨‍💻 Aktif Kodlama      ████████░░ 88%
-📊 Proje Tamamlama    ███████░░░ 75%
-🤖 AI/ML Odağı        █████████░ 92%
-💾 Veri İşleme        ████████░░ 85%
-🧠 Derin Öğrenme      ███████░░░ 78%
-```
 
 ### 🔥 Contribution Streak
 
@@ -221,6 +206,7 @@ Daha fazla bilgi için: [GitHub Profilimi Ziyaret Et](https://github.com/YusufBa
 ```
 ✅ Gelişmiş AI projeleri geliştirme
 ✅ Derin Öğrenme konusunda uzmanlaşma
+✅ Ai Agentlerinda bilgi sahibi olma
 ✅ Python ve ML bilgisini derinleştirme
 ✅ AI internship deneyimi kazanma
 ✅ Open Source projelere katkı yapma
@@ -237,7 +223,7 @@ Daha fazla bilgi için: [GitHub Profilimi Ziyaret Et](https://github.com/YusufBa
 [![Email](https://img.shields.io/badge/Email-yusufbarany1@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:yusufbarany1@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Yusuf%20Baran%20YILDIZ-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yusuf-baran-yildiz-136187300/)
 [![GitHub](https://img.shields.io/badge/GitHub-YusufBaranYildiz-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/YusufBaranYildiz)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-0553%200501524-25C059?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/905530501524)
+
 
 </p>
 
@@ -261,17 +247,8 @@ Daha fazla bilgi için: [GitHub Profilimi Ziyaret Et](https://github.com/YusufBa
 
 ---
 
-## 💡 Felsefem
 
-<p align="center">
 
-> **"Kod yazabilir herkes, ama anlamlı çözümler yaratmak sanat gerektirir."**
->
-> *— Teknoloji hizmet etmelidir. İnsan merkezi olmalıdır.*
-
-</p>
-
----
 
 ## 🌟 İlgi Alanlarım
 
