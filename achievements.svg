@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 250" width="1000" height="250" role="img" aria-label="KPMG Olympics Finalisti · Anadolu Hackathon 7.'si · Yazılım Mühendisliği Mezunu 2026">
+<defs>
+<linearGradient id="card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12303C"/><stop offset="1" stop-color="#0B1A22"/></linearGradient>
+<filter id="gl" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="blr" x="-30%" y="-60%" width="160%" height="220%"><feGaussianBlur stdDeviation="6"/></filter>
+<linearGradient id="acc0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF6B9D"/><stop offset="1" stop-color="#FF9AC0"/></linearGradient><radialGradient id="halo0"><stop offset="0" stop-color="#FF6B9D" stop-opacity=".38"/><stop offset="1" stop-color="#FF6B9D" stop-opacity="0"/></radialGradient><linearGradient id="acc1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00D9FF"/><stop offset="1" stop-color="#8FF0FF"/></linearGradient><radialGradient id="halo1"><stop offset="0" stop-color="#00D9FF" stop-opacity=".38"/><stop offset="1" stop-color="#00D9FF" stop-opacity="0"/></radialGradient><linearGradient id="acc2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF6B9D"/><stop offset="1" stop-color="#00D9FF"/></linearGradient><radialGradient id="halo2"><stop offset="0" stop-color="#FF6B9D" stop-opacity=".38"/><stop offset="1" stop-color="#FF6B9D" stop-opacity="0"/></radialGradient>
+<style><![CDATA[
+.sf{font-family:'Segoe UI','Helvetica Neue',Arial,'Noto Sans',sans-serif}
+.em{font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif}
+.run{animation:run 4.8s linear infinite}
+@keyframes run{to{stroke-dashoffset:-965.66}}
+.fl{animation:fl 3.6s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.hal{animation:hl 3.6s ease-in-out infinite}
+@keyframes hl{0%,100%{opacity:.5}50%{opacity:1}}
+.chp{animation:cp 3s ease-in-out infinite}
+@keyframes cp{0%,100%{opacity:.35}50%{opacity:.8}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}]]></style>
+</defs>
+<g transform="translate(0 25)">
+<rect width="300" height="200" rx="20" fill="url(#card)"/>
+<rect width="300" height="200" rx="20" fill="none" stroke="#FFFFFF" stroke-opacity=".10" stroke-width="1.2"/>
+<rect class="run" width="300" height="200" rx="20" fill="none" stroke="url(#acc0)" stroke-width="3" stroke-linecap="round" stroke-dasharray="155 810.66" filter="url(#gl)" style="animation-delay:-0.0s"/>
+<circle class="hal" cx="150" cy="88" r="56" fill="url(#halo0)"/>
+<g class="fl" style="animation-delay:-0.0s">
+<circle cx="150" cy="88" r="34" fill="#0B1A22" stroke="url(#acc0)" stroke-width="2"/>
+<text class="em" x="150" y="100" font-size="34" text-anchor="middle">🏆</text>
+</g>
+<text class="sf" x="150" y="34" font-size="12" font-weight="700" letter-spacing="4" fill="#FF6B9D" text-anchor="middle">YARIŞMA</text>
+<text class="sf" x="150" y="150" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle" textLength="157" lengthAdjust="spacingAndGlyphs">KPMG Olympics</text>
+<rect class="chp" x="95.5" y="160" width="109" height="34" rx="17" fill="url(#acc0)" filter="url(#blr)" opacity=".4"/>
+<rect x="95.5" y="164" width="109" height="26" rx="13" fill="url(#acc0)"/>
+<text class="sf" x="150" y="182" font-size="13" font-weight="800" letter-spacing="1.5" fill="#0B1A22" text-anchor="middle">FINALIST</text>
+</g><g transform="translate(350 25)">
+<rect width="300" height="200" rx="20" fill="url(#card)"/>
+<rect width="300" height="200" rx="20" fill="none" stroke="#FFFFFF" stroke-opacity=".10" stroke-width="1.2"/>
+<rect class="run" width="300" height="200" rx="20" fill="none" stroke="url(#acc1)" stroke-width="3" stroke-linecap="round" stroke-dasharray="155 810.66" filter="url(#gl)" style="animation-delay:-1.6s"/>
+<circle class="hal" cx="150" cy="88" r="56" fill="url(#halo1)"/>
+<g class="fl" style="animation-delay:-0.9s">
+<circle cx="150" cy="88" r="34" fill="#0B1A22" stroke="url(#acc1)" stroke-width="2"/>
+<text class="em" x="150" y="100" font-size="34" text-anchor="middle">🚀</text>
+</g>
+<text class="sf" x="150" y="34" font-size="12" font-weight="700" letter-spacing="4" fill="#00D9FF" text-anchor="middle">HACKATHON</text>
+<text class="sf" x="150" y="150" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle" textLength="206" lengthAdjust="spacingAndGlyphs">Anadolu Hackathon</text>
+<rect class="chp" x="100" y="160" width="100" height="34" rx="17" fill="url(#acc1)" filter="url(#blr)" opacity=".4"/>
+<rect x="100" y="164" width="100" height="26" rx="13" fill="url(#acc1)"/>
+<text class="sf" x="150" y="182" font-size="13" font-weight="800" letter-spacing="1.5" fill="#0B1A22" text-anchor="middle">7. SIRA</text>
+</g><g transform="translate(700 25)">
+<rect width="300" height="200" rx="20" fill="url(#card)"/>
+<rect width="300" height="200" rx="20" fill="none" stroke="#FFFFFF" stroke-opacity=".10" stroke-width="1.2"/>
+<rect class="run" width="300" height="200" rx="20" fill="none" stroke="url(#acc2)" stroke-width="3" stroke-linecap="round" stroke-dasharray="155 810.66" filter="url(#gl)" style="animation-delay:-3.2s"/>
+<circle class="hal" cx="150" cy="88" r="56" fill="url(#halo2)"/>
+<g class="fl" style="animation-delay:-1.8s">
+<circle cx="150" cy="88" r="34" fill="#0B1A22" stroke="url(#acc2)" stroke-width="2"/>
+<text class="em" x="150" y="100" font-size="34" text-anchor="middle">🎓</text>
+</g>
+<text class="sf" x="150" y="34" font-size="12" font-weight="700" letter-spacing="4" fill="#FF6B9D" text-anchor="middle">LİSANS</text>
+<text class="sf" x="150" y="150" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle" textLength="242" lengthAdjust="spacingAndGlyphs">Yazılım Mühendisliği</text>
+<rect class="chp" x="76.5" y="160" width="147" height="34" rx="17" fill="url(#acc2)" filter="url(#blr)" opacity=".4"/>
+<rect x="76.5" y="164" width="147" height="26" rx="13" fill="url(#acc2)"/>
+<text class="sf" x="150" y="182" font-size="13" font-weight="800" letter-spacing="1.5" fill="#0B1A22" text-anchor="middle">MEZUN · 2026</text>
+</g>
+</svg>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 32" width="1000" height="32" aria-hidden="true">
+  <defs>
+    <!-- Base Line Gradient -->
+    <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00D9FF" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#FF6B9D" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#00D9FF" stop-opacity="0.9"/>
+      <stop offset="85%" stop-color="#FF6B9D" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#00D9FF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Comet 1: Cyan -->
+    <linearGradient id="comet1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00D9FF" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#00D9FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+
+    <!-- Comet 2: Hot Pink -->
+    <linearGradient id="comet2" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stop-color="#FF6B9D" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#FF6B9D" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+
+    <linearGradient id="centerDiamond" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#FF6B9D"/>
+    </linearGradient>
+
+    <!-- Edge Mask -->
+    <linearGradient id="maskGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#000"/>
+      <stop offset="10%" stop-color="#FFF"/>
+      <stop offset="90%" stop-color="#FFF"/>
+      <stop offset="100%" stop-color="#000"/>
+    </linearGradient>
+    <mask id="dividerMask">
+      <rect width="1000" height="32" fill="url(#maskGrad)"/>
+    </mask>
+
+    <filter id="neonBlur" x="-50%" y="-400%" width="200%" height="900%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style><![CDATA[
+      /* Left-to-right cyan comet */
+      .comet-l2r {
+        animation: flyRight 4.5s linear infinite;
+      }
+      @keyframes flyRight {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(1220px); }
+      }
+
+      /* Right-to-left pink comet */
+      .comet-r2l {
+        animation: flyLeft 5.2s linear infinite;
+      }
+      @keyframes flyLeft {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-1220px); }
+      }
+
+      /* Center pulsating ornament */
+      .pulsar {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: pulseScale 2.2s ease-in-out infinite;
+      }
+      @keyframes pulseScale {
+        0%, 100% { transform: scale(1) rotate(45deg); opacity: 0.8; }
+        50% { transform: scale(1.35) rotate(45deg); opacity: 1; filter: drop-shadow(0 0 8px #00D9FF); }
+      }
+
+      /* Orbit dots */
+      .orb-twinkle {
+        animation: orbTw 1.8s ease-in-out infinite alternate;
+      }
+      @keyframes orbTw {
+        0% { opacity: 0.3; transform: scale(0.8); }
+        100% { opacity: 1; transform: scale(1.2); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; }
+      }
+    ]]></style>
+  </defs>
+
+  <!-- Base Glowing Neon Line -->
+  <rect x="25" y="15" width="950" height="2" rx="1" fill="url(#lineGrad)"/>
+
+  <!-- Animated Flying Comets masked -->
+  <g mask="url(#dividerMask)">
+    <!-- Cyan Comet flying right -->
+    <rect class="comet-l2r" x="-180" y="14" width="180" height="4" rx="2" fill="url(#comet1)" filter="url(#neonBlur)"/>
+    <!-- Pink Comet flying left -->
+    <rect class="comet-r2l" x="1000" y="14" width="180" height="4" rx="2" fill="url(#comet2)" filter="url(#neonBlur)"/>
+  </g>
+
+  <!-- Center Decorative Crest -->
+  <g transform="translate(500, 16)">
+    <!-- Central Diamond -->
+    <rect class="pulsar" x="-7" y="-7" width="14" height="14" rx="2" fill="url(#centerDiamond)"/>
+    <!-- Side Star Beads -->
+    <circle class="orb-twinkle" cx="-28" cy="0" r="2.8" fill="#00D9FF" style="animation-delay: -0.9s;"/>
+    <circle class="orb-twinkle" cx="28" cy="0" r="2.8" fill="#FF6B9D" style="animation-delay: -0.2s;"/>
+    <circle class="orb-twinkle" cx="-48" cy="0" r="1.8" fill="#FF6B9D" style="animation-delay: -1.4s;"/>
+    <circle class="orb-twinkle" cx="48" cy="0" r="1.8" fill="#00D9FF" style="animation-delay: -0.7s;"/>
+  </g>
+</svg>

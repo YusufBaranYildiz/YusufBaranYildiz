@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 160" width="1000" height="160" role="img" aria-label="Happy Coding">
+<defs>
+<linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2C5364"/><stop offset=".5" stop-color="#00D9FF"/><stop offset="1" stop-color="#FF6B9D"/></linearGradient>
+<linearGradient id="g2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF6B9D"/><stop offset=".5" stop-color="#00D9FF"/><stop offset="1" stop-color="#2C5364"/></linearGradient>
+<linearGradient id="g3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2C5364"/><stop offset=".5" stop-color="#1B3A47"/><stop offset="1" stop-color="#2C5364"/></linearGradient>
+<style><![CDATA[
+.sf{font-family:'Segoe UI','Helvetica Neue',Arial,'Noto Sans',sans-serif}
+.em{font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif}
+.f1{animation:f1 12s linear infinite}
+@keyframes f1{to{transform:translateX(-500px)}}
+.f2{animation:f2 9s linear infinite}
+@keyframes f2{from{transform:translateX(-400px)}to{transform:translateX(0)}}
+.f3{animation:f3 7s linear infinite}
+@keyframes f3{to{transform:translateX(-320px)}}
+.st{animation:st 2.6s ease-in-out infinite}
+@keyframes st{0%,100%{opacity:.15}50%{opacity:.9}}
+.hb{animation:hb 3s ease-in-out infinite}
+@keyframes hb{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}]]></style>
+</defs>
+<circle class="st" cx="616" cy="48" r="2.3" fill="#FF6B9D" style="animation-delay:-2.5s"/><circle class="st" cx="726" cy="58" r="1.2" fill="#00D9FF" style="animation-delay:-1.2s"/><circle class="st" cx="917" cy="43" r="2.5" fill="#FF6B9D" style="animation-delay:-0.3s"/><circle class="st" cx="471" cy="21" r="2.0" fill="#00D9FF" style="animation-delay:-1.5s"/><circle class="st" cx="42" cy="20" r="1.6" fill="#FF6B9D" style="animation-delay:-2.4s"/><circle class="st" cx="750" cy="17" r="2.3" fill="#00D9FF" style="animation-delay:-0.4s"/><circle class="st" cx="610" cy="15" r="1.2" fill="#FF6B9D" style="animation-delay:-2.3s"/><circle class="st" cx="227" cy="20" r="2.6" fill="#00D9FF" style="animation-delay:-2.3s"/><circle class="st" cx="302" cy="60" r="2.0" fill="#FF6B9D" style="animation-delay:-1.8s"/><circle class="st" cx="222" cy="59" r="2.2" fill="#00D9FF" style="animation-delay:-2.5s"/><circle class="st" cx="870" cy="24" r="1.7" fill="#FF6B9D" style="animation-delay:-0.4s"/><circle class="st" cx="167" cy="12" r="1.6" fill="#00D9FF" style="animation-delay:-1.6s"/><circle class="st" cx="33" cy="45" r="1.7" fill="#FF6B9D" style="animation-delay:-0.8s"/><circle class="st" cx="799" cy="34" r="1.6" fill="#00D9FF" style="animation-delay:-1.3s"/><circle class="st" cx="692" cy="11" r="2.6" fill="#FF6B9D" style="animation-delay:-0.1s"/><circle class="st" cx="735" cy="54" r="1.2" fill="#00D9FF" style="animation-delay:-2.0s"/>
+<g class="f1"><path d="M0,70 Q125,58 250,70 T500,70 T750,70 T1000,70 T1250,70 T1500,70 T1750,70 T2000,70 T2250,70 T2500,70 L2500,160 L0,160 Z" fill="url(#g1)" fill-opacity=".35"/></g>
+<g class="f2"><path d="M0,86 Q100,70 200,86 T400,86 T600,86 T800,86 T1000,86 T1200,86 T1400,86 T1600,86 T1800,86 T2000,86 T2200,86 T2400,86 L2400,160 L0,160 Z" fill="url(#g2)" fill-opacity=".45"/></g>
+<g class="f3"><path d="M0,104 Q80,94 160,104 T320,104 T480,104 T640,104 T800,104 T960,104 T1120,104 T1280,104 T1440,104 T1600,104 T1760,104 T1920,104 T2080,104 T2240,104 T2400,104 L2400,160 L0,160 Z" fill="url(#g3)" fill-opacity=".92"/></g>
+<g class="hb"><text class="sf" x="485" y="134" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle" textLength="150" lengthAdjust="spacingAndGlyphs">Happy Coding</text><text class="em" x="586" y="134" font-size="22" text-anchor="middle">🚀</text></g>
+</svg>
