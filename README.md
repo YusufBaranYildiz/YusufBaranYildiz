@@ -234,18 +234,6 @@
   <img src="assets/game.gif" width="90%" alt="GitHub Space Shooter Game"/>
 </div>
 
-<br/>
-
-<!-- GITHUB CONTRIBUTION SNAKE -->
-<div align="center">
-  <p><i>🐍 Commit karelerini avlayan Contribution Snake animasyonu:</i></p>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/YusufBaranYildiz/YusufBaranYildiz/output/github-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/YusufBaranYildiz/YusufBaranYildiz/output/github-snake.svg">
-    <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/YusufBaranYildiz/YusufBaranYildiz/output/github-snake-dark.svg" width="90%"/>
-  </picture>
-</div>
-
 <!-- 💫 NEON COMET DIVIDER -->
 <p align="center">
   <img src="assets/divider.svg" width="100%" alt="Divider"/>
@@ -253,11 +241,6 @@
 
 <!-- ==================== 📊 GITHUB STATS ==================== -->
 <h2 align="center">📊 Canlı GitHub İstatistikleri</h2>
-
-<p align="center">
-  <!-- TROPHY CASE -->
-  <img src="https://github-profile-trophy.vercel.app/?username=YusufBaranYildiz&theme=radical&no-frame=true&no-bg=true&margin_w=8&column=6" alt="GitHub Trophies" />
-</p>
 
 <p align="center">
   <!-- STREAK STATS -->
@@ -274,13 +257,6 @@
   <!-- TOP LANGUAGES -->
   <a href="https://github.com/YusufBaranYildiz">
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YusufBaranYildiz&layout=compact&theme=tokyonight&hide_border=true&border_radius=12&bg_color=0A1822&title_color=00D9FF&text_color=E2F2FC" alt="Top Languages" />
-  </a>
-</p>
-
-<p align="center">
-  <!-- ACTIVITY GRAPH -->
-  <a href="https://github.com/YusufBaranYildiz">
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=YusufBaranYildiz&theme=tokyo-night&bg_color=0A1822&hide_border=true&border_radius=12&color=00D9FF&line=FF6B9D&point=00D9FF" width="90%" alt="Activity Graph" />
   </a>
 </p>
 
