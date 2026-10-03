@@ -287,14 +287,14 @@
 
 | Kurum | Sertifika / Eğitim Programı | Yıl |
 |:---|:---|:---:|
-| 🌐 **CISCO & IBM SkillsBuild** | AI Fundamentals with IBM SkillsBuild | 2025 |
-| 📊 **CISCO Networking Academy** | Data Science Essentials With Python | 2026 |
-| 🧠 **İstanbul Büyükşehir Belediyesi** | Deep Learning Atölyesi | 2025 |
-| 🏦 **GARANTİ BBVA** | Makine Öğrenmesi Programı | 2025 |
-| ⚡ **GARANTİ BBVA** | Generative AI Teknoloji Serisi | 2025 |
-| 🚀 **İstanbul Büyükşehir Belediyesi** | Makine Öğrenmesi Bootcamp | 2026 |
-| 🏛️ **BTK AKADEMİ** | Python Programlama for AI | 2024 |
-| 🧩 **BTK AKADEMİ** | AI ve Algoritmalarına Giriş | 2025 |
+| **CISCO & IBM SkillsBuild** | AI Fundamentals with IBM SkillsBuild | 2025 |
+| **CISCO Networking Academy** | Data Science Essentials With Python | 2026 |
+| **İstanbul Büyükşehir Belediyesi** | Deep Learning Atölyesi | 2025 |
+| **GARANTİ BBVA** | Makine Öğrenmesi Programı | 2025 |
+| **GARANTİ BBVA** | Generative AI Teknoloji Serisi | 2025 |
+| **İstanbul Büyükşehir Belediyesi** | Makine Öğrenmesi Bootcamp | 2026 |
+| **BTK AKADEMİ** | Python Programlama for AI | 2024 |
+| **BTK AKADEMİ** | AI ve Algoritmalarına Giriş | 2025 |
 
 </details>
 
