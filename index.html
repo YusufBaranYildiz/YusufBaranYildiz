@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,441 +8,529 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    /* ============================================================
+       CSS CUSTOM PROPERTIES — DARK / LIGHT THEME
+       ============================================================ */
+    :root {
+      --bg:           #060D13;
+      --bg-card:      rgba(12, 28, 38, 0.75);
+      --bg-hero:      rgba(14, 32, 45, 0.85);
+      --bg-nav:       rgba(10, 24, 34, 0.70);
+      --bg-terminal:  #08141D;
+      --bg-term-hdr:  #0F2634;
+      --border:       rgba(0, 217, 255, 0.25);
+      --border-card:  rgba(255, 255, 255, 0.08);
+      --text-primary: #E2F2FC;
+      --text-secondary:#9DBECE;
+      --text-muted:   #6C8E9F;
+      --text-mono:    #94B4C7;
+      --accent-cyan:  #00D9FF;
+      --accent-pink:  #FF6B9D;
+      --accent-green: #10B981;
+      --tag-bg:       #081721;
+      --tag-text:     #7ADFFF;
+      --pill-bg:      rgba(12, 30, 42, 0.75);
+      --glow-cyan:    rgba(0, 217, 255, 0.15);
+      --glow-pink:    rgba(255, 107, 157, 0.12);
+      --shadow:       rgba(0, 0, 0, 0.5);
+      --divider:      rgba(255, 255, 255, 0.08);
+      --footer-border:rgba(255, 255, 255, 0.06);
     }
 
+    [data-theme="light"] {
+      --bg:           #F0F6FA;
+      --bg-card:      rgba(255, 255, 255, 0.85);
+      --bg-hero:      rgba(240, 250, 255, 0.92);
+      --bg-nav:       rgba(255, 255, 255, 0.80);
+      --bg-terminal:  #1A2535;
+      --bg-term-hdr:  #1F3048;
+      --border:       rgba(0, 150, 200, 0.35);
+      --border-card:  rgba(0, 0, 0, 0.08);
+      --text-primary: #0A1F2E;
+      --text-secondary:#2A4A5E;
+      --text-muted:   #5C7A8F;
+      --text-mono:    #2A4A5E;
+      --accent-cyan:  #007BB5;
+      --accent-pink:  #D4446E;
+      --accent-green: #0A7A55;
+      --tag-bg:       #DFF0F8;
+      --tag-text:     #005C88;
+      --pill-bg:      rgba(220, 240, 250, 0.85);
+      --glow-cyan:    rgba(0, 123, 181, 0.10);
+      --glow-pink:    rgba(212, 68, 110, 0.08);
+      --shadow:       rgba(0, 40, 80, 0.18);
+      --divider:      rgba(0, 0, 0, 0.08);
+      --footer-border:rgba(0, 0, 0, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      background-color: #060D13;
-      color: #E2F2FC;
+      background-color: var(--bg);
+      color: var(--text-primary);
       font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
       overflow-x: hidden;
       min-height: 100vh;
       position: relative;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    /* Fullscreen Interactive Particle Canvas */
+    /* ============================================================ CANVAS */
     #particle-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1; pointer-events: none;
     }
 
-    /* Ambient Glow Backgrounds */
+    #visualizer-canvas {
+      position: fixed;
+      bottom: 0; left: 0;
+      width: 100%; height: 90px;
+      z-index: 1; pointer-events: none;
+      opacity: 0.45;
+    }
+
     .glow-cyan {
-      position: fixed;
-      top: -10%;
-      right: -5%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(0, 217, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-      z-index: 0;
-      pointer-events: none;
+      position: fixed; top: -10%; right: -5%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, var(--glow-cyan) 0%, transparent 70%);
+      z-index: 0; pointer-events: none;
+      transition: background 0.4s;
     }
-
     .glow-pink {
-      position: fixed;
-      bottom: -15%;
-      left: -10%;
-      width: 650px;
-      height: 650px;
-      background: radial-gradient(circle, rgba(255, 107, 157, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
-      z-index: 0;
-      pointer-events: none;
+      position: fixed; bottom: -15%; left: -10%;
+      width: 650px; height: 650px;
+      background: radial-gradient(circle, var(--glow-pink) 0%, transparent 70%);
+      z-index: 0; pointer-events: none;
+      transition: background 0.4s;
     }
 
-    /* Main Container */
+    /* ============================================================ CONTAINER */
     .container {
-      position: relative;
-      z-index: 2;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
+      position: relative; z-index: 2;
+      max-width: 1100px; margin: 0 auto;
+      padding: 40px 24px 120px;
     }
 
-    /* Top Navigation HUD */
+    /* ============================================================ NAV */
     .nav-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
       padding: 14px 24px;
-      background: rgba(10, 24, 34, 0.7);
+      background: var(--bg-nav);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(0, 217, 255, 0.25);
-      border-radius: 14px;
-      margin-bottom: 40px;
+      border: 1px solid var(--border);
+      border-radius: 14px; margin-bottom: 40px;
+      transition: background 0.4s, border-color 0.4s;
     }
-
     .brand {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 14px;
-      font-weight: 700;
-      color: #00D9FF;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-size: 14px; font-weight: 700;
+      color: var(--accent-cyan);
+      display: flex; align-items: center; gap: 10px;
+      transition: color 0.4s;
     }
-
     .status-dot {
-      width: 9px;
-      height: 9px;
-      background: #10B981;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #10B981;
+      width: 9px; height: 9px;
+      background: var(--accent-green); border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-green);
       animation: pulseDot 1.8s infinite;
     }
-
     @keyframes pulseDot {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
+      50%       { opacity: 0.4; transform: scale(0.85); }
     }
-
+    .nav-right {
+      display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+    }
     .nav-links a {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 13px;
-      color: #94B4C7;
-      text-decoration: none;
-      margin-left: 20px;
+      font-family: 'JetBrains Mono', monospace; font-size: 13px;
+      color: var(--text-mono); text-decoration: none;
+      margin-left: 16px;
       transition: color 0.2s, text-shadow 0.2s;
     }
+    .nav-links a:hover { color: var(--accent-cyan); text-shadow: 0 0 8px rgba(0,217,255,0.5); }
 
-    .nav-links a:hover {
-      color: #00D9FF;
-      text-shadow: 0 0 8px rgba(0, 217, 255, 0.6);
-    }
-
-    /* 3D Interactive Tilt Hero Card */
-    .hero-card {
-      position: relative;
-      background: linear-gradient(135deg, rgba(14, 32, 45, 0.85) 0%, rgba(8, 19, 28, 0.95) 100%);
-      backdrop-filter: blur(16px);
-      border: 1.5px solid rgba(0, 217, 255, 0.35);
-      border-radius: 24px;
-      padding: 50px 45px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 217, 255, 0.08);
-      transform-style: preserve-3d;
-      transition: transform 0.15s ease-out, box-shadow 0.25s ease;
-      cursor: crosshair;
-      margin-bottom: 48px;
-    }
-
-    .hero-card:hover {
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 45px rgba(0, 217, 255, 0.2);
-    }
-
-    .hero-prefix {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 14px;
-      font-weight: 600;
-      color: #FF6B9D;
-      margin-bottom: 12px;
-      letter-spacing: 2px;
-    }
-
-    .hero-title {
-      font-size: 52px;
-      font-weight: 800;
-      background: linear-gradient(90deg, #FFFFFF 0%, #C4F4FF 50%, #00D9FF 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 16px;
-      letter-spacing: -1px;
-    }
-
-    .hero-role {
-      font-size: 22px;
-      font-weight: 700;
-      color: #00D9FF;
-      margin-bottom: 18px;
-    }
-
-    .hero-desc {
-      font-size: 16px;
-      line-height: 1.7;
-      color: #9DBECE;
-      max-width: 780px;
-      margin-bottom: 30px;
-    }
-
-    /* Interactive Skill Pills */
-    .pill-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .pill {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 8px 18px;
-      background: rgba(12, 30, 42, 0.75);
-      border: 1px solid rgba(0, 217, 255, 0.3);
+    /* Theme Toggle Button */
+    .theme-toggle {
+      margin-left: 16px;
+      background: var(--pill-bg);
+      border: 1px solid var(--border);
       border-radius: 20px;
-      color: #D9F6FF;
-      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .pill:hover {
-      transform: translateY(-4px) scale(1.05);
-      background: #00D9FF;
-      color: #08131C;
-      box-shadow: 0 8px 20px rgba(0, 217, 255, 0.4);
-      border-color: #00D9FF;
-    }
-
-    /* Section Headers */
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 24px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .section-title {
+      padding: 6px 14px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 20px;
-      font-weight: 700;
-      color: #FFFFFF;
-      letter-spacing: 1px;
-    }
-
-    .section-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      color: #00D9FF;
-    }
-
-    /* Interactive Project Cards */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      margin-bottom: 50px;
-    }
-
-    .project-card {
-      background: rgba(12, 28, 38, 0.75);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-      padding: 28px;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, #FF6B9D, #00D9FF);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(0, 217, 255, 0.4);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 24px rgba(0, 217, 255, 0.12);
-    }
-
-    .project-card:hover::before {
-      opacity: 1;
-    }
-
-    .project-title {
-      font-size: 20px;
-      font-weight: 700;
-      color: #FFFFFF;
-      margin-bottom: 10px;
-    }
-
-    .project-meta {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      color: #00D9FF;
-      margin-bottom: 14px;
+      font-size: 11px; font-weight: 700;
+      color: var(--accent-cyan);
+      cursor: pointer;
+      transition: all 0.25s ease;
       letter-spacing: 0.5px;
     }
-
-    .project-desc {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #92B2C2;
-      margin-bottom: 20px;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-
-    .project-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      background: #081721;
-      padding: 4px 10px;
-      border-radius: 6px;
-      color: #7ADFFF;
-      border: 1px solid rgba(0, 217, 255, 0.2);
-    }
-
-    .project-btn {
-      display: inline-block;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      font-weight: 700;
-      color: #00D9FF;
-      text-decoration: none;
-      padding: 8px 16px;
-      background: rgba(0, 217, 255, 0.1);
-      border: 1px solid rgba(0, 217, 255, 0.3);
-      border-radius: 8px;
-      transition: all 0.2s ease;
-      text-align: center;
-    }
-
-    .project-btn:hover {
-      background: #00D9FF;
+    .theme-toggle:hover {
+      background: var(--accent-cyan);
       color: #07121B;
-      box-shadow: 0 0 16px rgba(0, 217, 255, 0.4);
+      box-shadow: 0 0 14px rgba(0,217,255,0.35);
     }
 
-    /* Live Interactive Terminal */
+    /* CV Download Button */
+    .cv-btn {
+      margin-left: 10px;
+      display: inline-flex; align-items: center; gap: 6px;
+      background: linear-gradient(135deg, var(--accent-pink), #C83D72);
+      border: none; border-radius: 20px;
+      padding: 7px 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 700;
+      color: #FFFFFF; cursor: pointer; text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 4px 14px rgba(255,107,157,0.3);
+    }
+    .cv-btn:hover {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 8px 22px rgba(255,107,157,0.5);
+    }
+    .cv-btn-icon { font-size: 13px; }
+
+    /* Visitor Counter Badge */
+    .visitor-badge {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px; padding: 6px 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: var(--text-muted);
+      transition: all 0.3s;
+    }
+    .visitor-badge img { height: 18px; border-radius: 4px; }
+    .visitor-label { color: var(--accent-cyan); font-weight: 700; }
+
+    /* ============================================================ HERO */
+    .hero-card {
+      position: relative;
+      background: linear-gradient(135deg, var(--bg-hero) 0%, rgba(8,19,28,0.95) 100%);
+      backdrop-filter: blur(16px);
+      border: 1.5px solid var(--border);
+      border-radius: 24px; padding: 50px 45px;
+      box-shadow: 0 20px 50px var(--shadow), 0 0 30px rgba(0,217,255,0.08);
+      transform-style: preserve-3d;
+      transition: transform 0.15s ease-out, box-shadow 0.25s ease, background 0.4s, border-color 0.4s;
+      cursor: crosshair; margin-bottom: 48px;
+    }
+    .hero-card:hover {
+      box-shadow: 0 30px 60px var(--shadow), 0 0 45px rgba(0,217,255,0.2);
+    }
+    .hero-prefix {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px; font-weight: 600;
+      color: var(--accent-pink); margin-bottom: 12px; letter-spacing: 2px;
+      transition: color 0.4s;
+    }
+    .hero-title {
+      font-size: 52px; font-weight: 800;
+      background: linear-gradient(90deg, var(--text-primary) 0%, #C4F4FF 50%, var(--accent-cyan) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 16px; letter-spacing: -1px;
+    }
+    .hero-role {
+      font-size: 22px; font-weight: 700;
+      color: var(--accent-cyan); margin-bottom: 18px; transition: color 0.4s;
+    }
+    .hero-desc {
+      font-size: 16px; line-height: 1.7;
+      color: var(--text-secondary); max-width: 780px; margin-bottom: 30px;
+      transition: color 0.4s;
+    }
+
+    /* Pills */
+    .pill-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+    .pill {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+      padding: 8px 18px; background: var(--pill-bg);
+      border: 1px solid var(--border); border-radius: 20px;
+      color: var(--text-primary);
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.4s, border-color 0.4s;
+    }
+    .pill:hover {
+      transform: translateY(-4px) scale(1.05);
+      background: var(--accent-cyan); color: #08131C;
+      box-shadow: 0 8px 20px rgba(0,217,255,0.4);
+      border-color: var(--accent-cyan);
+    }
+
+    /* ============================================================ SECTION */
+    .section-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 24px; padding-bottom: 12px;
+      border-bottom: 1px solid var(--divider); transition: border-color 0.4s;
+    }
+    .section-title {
+      font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700;
+      color: var(--text-primary); letter-spacing: 1px; transition: color 0.4s;
+    }
+    .section-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      color: var(--accent-cyan); transition: color 0.4s;
+    }
+
+    /* ============================================================ PROJECT FILTERS */
+    .filter-bar {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px;
+    }
+    .filter-btn {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700;
+      padding: 8px 20px;
+      background: var(--pill-bg); border: 1px solid var(--border);
+      border-radius: 20px; color: var(--text-mono);
+      cursor: pointer; transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--accent-cyan); color: #07121B;
+      border-color: var(--accent-cyan);
+      box-shadow: 0 6px 18px rgba(0,217,255,0.35);
+      transform: translateY(-2px);
+    }
+    .filter-btn[data-filter="AI"].active   { background: var(--accent-pink); border-color: var(--accent-pink); box-shadow: 0 6px 18px rgba(255,107,157,0.35); }
+    .filter-btn[data-filter="Web"].active  { background: #38BDF8; border-color: #38BDF8; color: #07121B; box-shadow: 0 6px 18px rgba(56,189,248,0.35); }
+    .filter-btn[data-filter="Data"].active { background: #A78BFA; border-color: #A78BFA; color: #07121B; box-shadow: 0 6px 18px rgba(167,139,250,0.35); }
+
+    /* ============================================================ PROJECT GRID */
+    .projects-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px; margin-bottom: 50px;
+    }
+    .project-card {
+      background: var(--bg-card); backdrop-filter: blur(10px);
+      border: 1px solid var(--border-card); border-radius: 18px; padding: 28px;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s, border-color 0.4s;
+      display: flex; flex-direction: column; justify-content: space-between;
+      position: relative; overflow: hidden; cursor: pointer;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-cyan));
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0,217,255,0.4);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.4), 0 0 24px rgba(0,217,255,0.12);
+    }
+    .project-card:hover::before { opacity: 1; }
+
+    /* Hidden card state for filter */
+    .project-card.hidden {
+      display: none;
+    }
+    .project-card.fade-in {
+      animation: cardFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes cardFadeIn {
+      from { opacity: 0; transform: translateY(20px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .project-title { font-size: 20px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; transition: color 0.4s; }
+    .project-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent-cyan); margin-bottom: 14px; letter-spacing: 0.5px; transition: color 0.4s; }
+    .project-desc { font-size: 14px; line-height: 1.6; color: var(--text-secondary); margin-bottom: 20px; transition: color 0.4s; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .project-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      background: var(--tag-bg); padding: 4px 10px; border-radius: 6px;
+      color: var(--tag-text); border: 1px solid rgba(0,217,255,0.2);
+      transition: background 0.4s, color 0.4s;
+    }
+    .project-btn {
+      display: inline-block; font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; font-weight: 700; color: var(--accent-cyan);
+      text-decoration: none; padding: 8px 16px;
+      background: rgba(0,217,255,0.1); border: 1px solid rgba(0,217,255,0.3);
+      border-radius: 8px; transition: all 0.2s ease; text-align: center;
+    }
+    .project-btn:hover { background: var(--accent-cyan); color: #07121B; box-shadow: 0 0 16px rgba(0,217,255,0.4); }
+
+    /* Open Modal hint */
+    .modal-hint {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px;
+      color: var(--text-muted); text-align: right; margin-top: 8px;
+    }
+
+    /* ============================================================ MODAL */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.82);
+      backdrop-filter: blur(10px);
+      z-index: 1000; display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-box {
+      background: var(--bg-hero);
+      border: 1.5px solid var(--border); border-radius: 24px;
+      padding: 44px 42px; max-width: 680px; width: 90%;
+      max-height: 85vh; overflow-y: auto;
+      transform: scale(0.88) translateY(24px);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .modal-overlay.open .modal-box {
+      transform: scale(1) translateY(0);
+    }
+    .modal-close {
+      position: absolute; top: 18px; right: 20px;
+      background: none; border: 1px solid var(--border);
+      border-radius: 8px; width: 34px; height: 34px;
+      color: var(--text-muted); font-size: 18px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+    }
+    .modal-close:hover { color: var(--accent-pink); border-color: var(--accent-pink); }
+    .modal-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      color: var(--accent-pink); letter-spacing: 2px; margin-bottom: 12px;
+    }
+    .modal-title { font-size: 30px; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; }
+    .modal-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--accent-cyan); margin-bottom: 20px; }
+    .modal-desc { font-size: 15px; line-height: 1.75; color: var(--text-secondary); margin-bottom: 24px; }
+    .modal-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .modal-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .modal-btn-primary {
+      font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700;
+      padding: 10px 24px; border-radius: 10px;
+      background: var(--accent-cyan); color: #07121B;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: all 0.2s; box-shadow: 0 0 16px rgba(0,217,255,0.3);
+    }
+    .modal-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,217,255,0.5); }
+
+    /* ============================================================ SCROLL REVEAL */
+    .reveal {
+      opacity: 0; transform: translateY(40px);
+      transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ============================================================ TERMINAL */
     .terminal-box {
-      background: #08141D;
-      border: 1px solid rgba(0, 217, 255, 0.3);
-      border-radius: 16px;
-      overflow: hidden;
+      background: var(--bg-terminal); border: 1px solid rgba(0,217,255,0.3);
+      border-radius: 16px; overflow: hidden;
       box-shadow: 0 16px 40px rgba(0,0,0,0.6);
-      margin-bottom: 50px;
+      margin-bottom: 50px; transition: background 0.4s;
     }
-
     .terminal-header {
-      background: #0F2634;
-      padding: 12px 18px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: var(--bg-term-hdr); padding: 12px 18px;
+      display: flex; align-items: center; gap: 8px;
+      border-bottom: 1px solid var(--divider); transition: background 0.4s;
     }
-
-    .dot {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-    }
+    .dot { width: 11px; height: 11px; border-radius: 50%; }
     .dot-red { background: #FF5F56; }
     .dot-yellow { background: #FFBD2E; }
     .dot-green { background: #27C93F; }
-
-    .terminal-title {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      color: #7899AC;
-      margin-left: 12px;
-    }
-
+    .terminal-title { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7899AC; margin-left: 12px; }
     .terminal-body {
-      padding: 24px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 13px;
-      min-height: 200px;
-      line-height: 1.7;
+      padding: 24px; font-family: 'JetBrains Mono', monospace;
+      font-size: 13px; min-height: 200px; line-height: 1.7; max-height: 340px; overflow-y: auto;
     }
-
-    .terminal-output {
-      color: #A3C5D6;
-      margin-bottom: 14px;
-      white-space: pre-wrap;
-    }
-
-    .terminal-input-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .terminal-prompt {
-      color: #00D9FF;
-      font-weight: 700;
-    }
-
+    .terminal-output { color: #A3C5D6; margin-bottom: 14px; white-space: pre-wrap; }
+    .terminal-input-row { display: flex; align-items: center; gap: 10px; }
+    .terminal-prompt { color: #00D9FF; font-weight: 700; }
     .terminal-input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: #FFFFFF;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 13px;
+      flex: 1; background: transparent; border: none; outline: none;
+      color: #FFFFFF; font-family: 'JetBrains Mono', monospace; font-size: 13px;
     }
 
-    /* Footer */
+    /* ============================================================ FOOTER */
     .footer {
-      text-align: center;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      color: #6C8E9F;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      color: var(--text-muted); padding-top: 30px;
+      border-top: 1px solid var(--footer-border);
+      transition: color 0.4s, border-color 0.4s;
     }
+    .footer-visitor {
+      display: flex; justify-content: center; align-items: center; gap: 10px;
+      margin-bottom: 14px;
+    }
+    .footer-visitor img { height: 22px; border-radius: 6px; }
 
+    /* ============================================================ RESPONSIVE */
     @media (max-width: 768px) {
-      .hero-title { font-size: 36px; }
-      .hero-card { padding: 32px 24px; }
-      .nav-bar { flex-direction: column; gap: 12px; }
+      .hero-title { font-size: 34px; }
+      .hero-card  { padding: 32px 24px; }
+      .nav-bar    { flex-direction: column; gap: 10px; }
+      .nav-right  { justify-content: center; }
+      .modal-box  { padding: 30px 22px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Background Canvas for Real-Time Cursor Following Particles -->
+  <!-- Background Canvases -->
   <canvas id="particle-canvas"></canvas>
+  <canvas id="visualizer-canvas"></canvas>
   <div class="glow-cyan"></div>
   <div class="glow-pink"></div>
 
+  <!-- Project Detail Modal -->
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Kapat">&times;</button>
+      <div class="modal-label" id="modalLabel">PROJECT</div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <div class="modal-meta" id="modalMeta"></div>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-tags" id="modalTags"></div>
+      <div class="modal-actions">
+        <a class="modal-btn-primary" id="modalLink" href="#" target="_blank">Repository Incele &rarr;</a>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
-    <!-- Top Navigation HUD -->
-    <header class="nav-bar">
+
+    <!-- Navigation HUD -->
+    <header class="nav-bar reveal">
       <div class="brand">
         <span class="status-dot"></span>
         <span>YUSUF_BARAN_YILDIZ // AI_CORE v2.6</span>
       </div>
-      <nav class="nav-links">
-        <a href="#projects">Projeler</a>
-        <a href="#terminal">Terminal</a>
-        <a href="https://github.com/YusufBaranYildiz" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/yusuf-baran-yildiz-136187300/" target="_blank">LinkedIn</a>
-      </nav>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#projects">Projeler</a>
+          <a href="#terminal">Terminal</a>
+          <a href="https://github.com/YusufBaranYildiz" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/yusuf-baran-yildiz-136187300/" target="_blank">LinkedIn</a>
+        </nav>
+        <!-- CV Download Button -->
+        <a class="cv-btn" href="Yusuf_Baran_Yildiz_CV.pdf" download>
+          <span class="cv-btn-icon">&#8659;</span> CV Indir
+        </a>
+        <!-- Dark / Light Mode Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Tema degistir">DARK</button>
+      </div>
     </header>
 
-    <!-- 3D Interactive Tilt Hero Card -->
-    <section class="hero-card" id="heroCard">
+    <!-- Visitor Counter — Prominent -->
+    <div style="display:flex; justify-content:flex-end; margin-bottom: 20px;" class="reveal reveal-delay-1">
+      <div class="visitor-badge">
+        <span class="visitor-label">ZIYARETCI</span>
+        <img src="https://komarev.com/ghpvc/?username=YusufBaranYildiz&style=flat-square&color=00D9FF&label=" alt="visitor count" />
+      </div>
+    </div>
+
+    <!-- 3D Tilt Hero Card -->
+    <section class="hero-card reveal reveal-delay-2" id="heroCard">
       <div class="hero-prefix">// SOFTWARE ENGINEER &bull; AI DEVELOPER</div>
-      <h1 class="hero-title">Yusuf Baran Yıldız</h1>
+      <h1 class="hero-title">Yusuf Baran Yildiz</h1>
       <div class="hero-role">Multi-Agent Systems &bull; Deep Learning &bull; LLM Integration</div>
       <p class="hero-desc">
-        Antalya Belek Üniversitesi Yazılım Mühendisliği mezunuyum. Çok ajanlı (multi-agent) otonom sistemler, LLM entegrasyonu (Llama3, LangChain) ve endüstriyel yapay zekâ çözümleri üzerine çalışıyorum.
+        Antalya Belek Universitesi Yazilim Muhendisligi mezunuyum. Cok ajanli (multi-agent) otonom sistemler, LLM entegrasyonu (Llama3, LangChain) ve endustriyel yapay zeka cozumleri uzerine calisiyorum.
       </p>
-
       <div class="pill-grid">
         <span class="pill">Multi-Agent Architecture</span>
         <span class="pill">Deep Learning</span>
@@ -456,38 +544,58 @@
 
     <!-- Projects Section -->
     <section id="projects">
-      <div class="section-header">
-        <h2 class="section-title">ÖNE ÇIKAN PROJELER</h2>
+      <div class="section-header reveal reveal-delay-1">
+        <h2 class="section-title">ONE CIKAN PROJELER</h2>
         <span class="section-tag">// PORTFOLIO DIRECTORY</span>
       </div>
 
-      <div class="projects-grid">
+      <!-- Filter Bar -->
+      <div class="filter-bar reveal reveal-delay-2">
+        <button class="filter-btn active" data-filter="all">Tumu</button>
+        <button class="filter-btn" data-filter="AI">AI / ML</button>
+        <button class="filter-btn" data-filter="Web">Web</button>
+        <button class="filter-btn" data-filter="Data">Data Science</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
         <!-- Orbital Shield -->
-        <article class="project-card">
+        <article class="project-card reveal reveal-delay-1"
+          data-category="AI"
+          data-title="Orbital Shield"
+          data-label="CAPSTONE PROJECT"
+          data-meta="Kaggle AI Agents Intensive Capstone &bull; 2026"
+          data-desc="NASA NeoWs API tabanlı çok ajanlı (multi-agent) otonom uzay tehdidi erken uyarı ve yörünge izleme sistemi. Gerçek zamanlı asteroid takibi, tehdit skoru hesaplama ve retro-fütüristik Gradio dashboard entegrasyonu ile donanmış tam kapsamlı AI pipeline mimarisi."
+          data-tags="Python,Multi-Agent,NASA API,Gradio,LangChain"
+          data-link="https://github.com/YusufBaranYildiz">
           <div>
             <h3 class="project-title">Orbital Shield</h3>
             <div class="project-meta">Kaggle AI Agents Intensive Capstone &bull; 2026</div>
-            <p class="project-desc">
-              NASA NeoWs API tabanlı çok ajanlı (multi-agent) otonom uzay tehdidi erken uyarı ve yörünge izleme sistemi. Canlı retro-fütüristik dashboard entegrasyonu.
-            </p>
+            <p class="project-desc">NASA NeoWs API tabanlı çok ajanlı otonom uzay tehdidi erken uyarı sistemi. Canlı retro-fütüristik dashboard entegrasyonu.</p>
             <div class="project-tags">
               <span class="project-tag">Python</span>
               <span class="project-tag">Multi-Agent</span>
               <span class="project-tag">NASA API</span>
-              <span class="project-tag">Dashboard</span>
+              <span class="project-tag">LangChain</span>
             </div>
           </div>
-          <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Repository İncele &rarr;</a>
+          <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Repository Incele &rarr;</a>
+          <div class="modal-hint">klik = detay</div>
         </article>
 
         <!-- WeatherWise -->
-        <article class="project-card">
+        <article class="project-card reveal reveal-delay-2"
+          data-category="AI"
+          data-title="WeatherWise"
+          data-label="HACKATHON"
+          data-meta="Sivas Universitesi Anadolu Hackathon 7.'si &bull; 2026"
+          data-desc="FastAPI, yerel Llama3 modeli ve Telegram bot entegrasyonuyla hava durumu verisine dayalı akıllı karar destek sistemi. Türkiye genelinde 7. sırada yer aldı. Parçacık efektli animasyonlu arayüz ve doğal dil tabanlı hava analizi modülü içermektedir."
+          data-tags="FastAPI,Llama3,Telegram Bot,Decision Support,Python"
+          data-link="https://github.com/YusufBaranYildiz">
           <div>
             <h3 class="project-title">WeatherWise</h3>
-            <div class="project-meta">Sivas Üniversitesi Anadolu Hackathon 7.'si &bull; 2026</div>
-            <p class="project-desc">
-              FastAPI, yerel Llama3 modeli ve Telegram bot entegrasyonuyla hava durumu verisine dayalı akıllı karar destek sistemi. Parçacık efektli animasyonlu arayüz.
-            </p>
+            <div class="project-meta">Sivas Universitesi Anadolu Hackathon 7.'si &bull; 2026</div>
+            <p class="project-desc">FastAPI, yerel Llama3 modeli ve Telegram bot entegrasyonuyla hava durumu verisine dayalı akıllı karar destek sistemi.</p>
             <div class="project-tags">
               <span class="project-tag">FastAPI</span>
               <span class="project-tag">Llama3</span>
@@ -495,17 +603,23 @@
               <span class="project-tag">Decision Support</span>
             </div>
           </div>
-          <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Repository İncele &rarr;</a>
+          <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Repository Incele &rarr;</a>
+          <div class="modal-hint">klik = detay</div>
         </article>
 
-        <!-- BAP Süreç Yönetimi -->
-        <article class="project-card">
+        <!-- BAP -->
+        <article class="project-card reveal reveal-delay-3"
+          data-category="Web"
+          data-title="BAP Surec Yonetim Platformu"
+          data-label="THESIS PROJECT"
+          data-meta="Bilimsel Arastirma Projeleri Bitirme Tezi &bull; 2026"
+          data-desc="ASP.NET Core/.NET 8, React ve PostgreSQL (Neon) ile çok şemalı (multi-schema) ve Row-Level Security (RLS) güvenlikli tam teşekküllü kurumsal süreç yönetim mimarisi. JWT tabanlı RBAC, Swagger dokümantasyonu ve dinamik form sistemi içermektedir."
+          data-tags="ASP.NET Core 8,React,PostgreSQL RLS,JWT RBAC,Docker"
+          data-link="https://github.com/YusufBaranYildiz/antalya-belek-proje-surec-yonetimi-v0.5">
           <div>
-            <h3 class="project-title">BAP Süreç Yönetim Platformu</h3>
-            <div class="project-meta">Bilimsel Araştırma Projeleri Bitirme Tezi &bull; 2026</div>
-            <p class="project-desc">
-              ASP.NET Core/.NET 8, React ve PostgreSQL (Neon) ile çok şemalı (multi-schema) ve Row-Level Security (RLS) güvenlikli tam teşekküllü kurumsal süreç yönetim mimarisi.
-            </p>
+            <h3 class="project-title">BAP Surec Yonetim Platformu</h3>
+            <div class="project-meta">Bilimsel Arastirma Projeleri Bitirme Tezi &bull; 2026</div>
+            <p class="project-desc">ASP.NET Core 8, React ve PostgreSQL ile multi-schema ve RLS güvenlikli kurumsal süreç yönetim mimarisi.</p>
             <div class="project-tags">
               <span class="project-tag">ASP.NET Core 8</span>
               <span class="project-tag">React</span>
@@ -513,17 +627,23 @@
               <span class="project-tag">JWT RBAC</span>
             </div>
           </div>
-          <a class="project-btn" href="https://github.com/YusufBaranYildiz/antalya-belek-proje-surec-yonetimi-v0.5" target="_blank">Repository İncele &rarr;</a>
+          <a class="project-btn" href="https://github.com/YusufBaranYildiz/antalya-belek-proje-surec-yonetimi-v0.5" target="_blank">Repository Incele &rarr;</a>
+          <div class="modal-hint">klik = detay</div>
         </article>
 
-        <!-- IBM Granite Doküman Özetleme -->
-        <article class="project-card">
+        <!-- IBM Granite -->
+        <article class="project-card reveal reveal-delay-1"
+          data-category="AI"
+          data-title="IBM Granite 4.0 Dokuman Ozetleme"
+          data-label="LLM PROJECT"
+          data-meta="LangChain &bull; Docling &bull; Replicate"
+          data-desc="LangChain, Docling ve Replicate ile Project Gutenberg büyük külliyat metinleri üzerinde çalışan akıllı bağlamsal doküman özetleme sistemi. IBM Granite 4.0 modeli kullanılarak uzun belgelerin hiyerarşik özetlenmesi ve anahtar kavram çıkarımı gerçekleştirilmektedir."
+          data-tags="IBM Granite,LangChain,Docling,Replicate,Python"
+          data-link="https://github.com/YusufBaranYildiz">
           <div>
-            <h3 class="project-title">IBM Granite 4.0 Doküman Özetleme</h3>
+            <h3 class="project-title">IBM Granite 4.0 Dokuman Ozetleme</h3>
             <div class="project-meta">LangChain &bull; Docling &bull; Replicate</div>
-            <p class="project-desc">
-              LangChain, Docling ve Replicate ile Project Gutenberg büyük külliyat metinleri üzerinde çalışan akıllı bağlamsal doküman özetleme sistemi.
-            </p>
+            <p class="project-desc">LangChain, Docling ve Replicate ile Project Gutenberg büyük külliyat metinleri üzerinde çalışan akıllı bağlamsal doküman özetleme sistemi.</p>
             <div class="project-tags">
               <span class="project-tag">IBM Granite</span>
               <span class="project-tag">LangChain</span>
@@ -531,52 +651,65 @@
               <span class="project-tag">Replicate</span>
             </div>
           </div>
-          <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Repository İncele &rarr;</a>
+          <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Repository Incele &rarr;</a>
+          <div class="modal-hint">klik = detay</div>
         </article>
 
         <!-- kamerakontrol.com -->
-        <article class="project-card">
+        <article class="project-card reveal reveal-delay-2"
+          data-category="AI"
+          data-title="kamerakontrol.com"
+          data-label="PRODUCTION PRODUCT"
+          data-meta="AIOR Teknoloji &bull; Endustriyel AI Platformu &bull; 2026"
+          data-desc="Endüstriyel kalite kontrol, yangın algılama, plaka tanıma ve kumaş muayene sistemlerini sunan yayına alınmış kurumsal yapay zekâ ürün platformu. Gerçek üretim ortamında faaliyet gösteren, YOLO tabanlı nesne tespiti ve sinyal işleme pipeline'larından oluşan mimari."
+          data-tags="Computer Vision,YOLO,Industrial AI,Product Architecture,Python"
+          data-link="https://github.com/YusufBaranYildiz">
           <div>
             <h3 class="project-title">kamerakontrol.com</h3>
-            <div class="project-meta">AIOR Teknoloji &bull; Endüstriyel AI Platformu &bull; 2026</div>
-            <p class="project-desc">
-              Endüstriyel kalite kontrol, yangın algılama, plaka tanıma ve kumaş muayene sistemlerini sunan yayına alınmış kurumsal yapay zekâ ürün platformu.
-            </p>
+            <div class="project-meta">AIOR Teknoloji &bull; Endustriyel AI Platformu &bull; 2026</div>
+            <p class="project-desc">Endüstriyel kalite kontrol, yangın algılama, plaka tanıma ve kumaş muayene sistemlerini sunan yayına alınmış kurumsal yapay zekâ platformu.</p>
             <div class="project-tags">
               <span class="project-tag">Computer Vision</span>
               <span class="project-tag">Industrial AI</span>
               <span class="project-tag">Product Architecture</span>
             </div>
           </div>
-          <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Platform Detayları &rarr;</a>
+          <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Platform Detaylari &rarr;</a>
+          <div class="modal-hint">klik = detay</div>
         </article>
 
         <!-- KPMG IxT -->
-        <article class="project-card">
+        <article class="project-card reveal reveal-delay-3"
+          data-category="Data"
+          data-title="KPMG IxT Olimpiyatlari Vaka Calismasi"
+          data-label="COMPETITION"
+          data-meta="Turkiye Geneli 40 Kisilik Final &bull; 2026"
+          data-desc="Üç aşamalı elemeyi geçerek KPMG yetkililerine sunulan makroekonomik belirsizlik analizi ve portföy yatırım tavsiyesi veri bilimi vaka çalışması. Python tabanlı istatistiksel model, interaktif görselleştirme ve sektörel karşılaştırmalı analiz içermektedir."
+          data-tags="Data Science,Macro Modeling,Python,Pandas,Visualization"
+          data-link="https://github.com/YusufBaranYildiz">
           <div>
-            <h3 class="project-title">KPMG IxT Olimpiyatları Vaka Çalışması</h3>
-            <div class="project-meta">Türkiye Geneli 40 Kişilik Final &bull; 2026</div>
-            <p class="project-desc">
-              Üç aşamalı elemeyi geçerek KPMG yetkililerine sunulan, makroekonomik belirsizlik analizi ve portföy yatırım tavsiyesi veri bilimi vaka çalışması.
-            </p>
+            <h3 class="project-title">KPMG IxT Olimpiyatlari Vaka Calismasi</h3>
+            <div class="project-meta">Turkiye Geneli 40 Kisilik Final &bull; 2026</div>
+            <p class="project-desc">Üç aşamalı elemeyi geçerek KPMG yetkililerine sunulan makroekonomik belirsizlik analizi ve portföy yatırım tavsiyesi vaka çalışması.</p>
             <div class="project-tags">
               <span class="project-tag">Data Science</span>
               <span class="project-tag">Macro Modeling</span>
               <span class="project-tag">Finalist</span>
             </div>
           </div>
-          <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Profil Detayları &rarr;</a>
+          <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Profil Detaylari &rarr;</a>
+          <div class="modal-hint">klik = detay</div>
         </article>
+
       </div>
     </section>
 
     <!-- Interactive Terminal -->
-    <section id="terminal">
+    <section id="terminal" class="reveal">
       <div class="section-header">
-        <h2 class="section-title">İNTERAKTİF KOMUT TERMİNALİ</h2>
+        <h2 class="section-title">INTERAKTIF KOMUT TERMINALI</h2>
         <span class="section-tag">// YBY REPL SHELL</span>
       </div>
-
       <div class="terminal-box">
         <div class="terminal-header">
           <span class="dot dot-red"></span>
@@ -585,8 +718,8 @@
           <span class="terminal-title">yby@terminal ~ interactive_shell</span>
         </div>
         <div class="terminal-body" id="terminalBody">
-          <div class="terminal-output" id="terminalOutput">Hoş geldiniz. Kullanılabilir komutları görmek için 'help' yazın.
-Örnek komutlar: help, skills, projects, contact, clear</div>
+          <div class="terminal-output" id="terminalOutput">Hos geldiniz. Kullanilabilir komutlari gormek icin 'help' yazin.
+Ornek komutlar: help, skills, projects, edu, contact, clear</div>
           <div class="terminal-input-row">
             <span class="terminal-prompt">yby@ai-lab:~$</span>
             <input type="text" class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false" placeholder="komut girin...">
@@ -596,234 +729,350 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer reveal">
+      <div class="footer-visitor">
+        <span style="color:var(--text-muted);">Ziyaretci sayaci:</span>
+        <img src="https://komarev.com/ghpvc/?username=YusufBaranYildiz&style=flat-square&color=00D9FF" alt="Profile Views" />
+      </div>
       <div>Designed &amp; Engineered by Yusuf Baran YILDIZ &bull; 2026</div>
     </footer>
-  </div>
+
+  </div><!-- /container -->
 
   <script>
     /* ============================================================
-       1. INTERACTIVE MOUSE CURSOR TRACKING PARTICLE SYSTEM
+       1. DARK / LIGHT THEME TOGGLE
+       ============================================================ */
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    function applyTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      themeToggle.textContent = theme === 'dark' ? 'DARK' : 'LIGHT';
+      localStorage.setItem('yby-theme', theme);
+    }
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('yby-theme') || 'dark';
+    applyTheme(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    /* ============================================================
+       2. INTERACTIVE MOUSE CURSOR TRACKING PARTICLE SYSTEM
        ============================================================ */
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas.getContext('2d');
-
     let width, height;
-    function resize() {
+
+    function resizeCanvas() {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
     }
-    window.addEventListener('resize', resize);
-    resize();
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
 
-    // Mouse coordinates
-    const mouse = {
-      x: window.innerWidth / 2,
-      y: window.innerHeight / 2,
-      radius: 140,
-      active: false
-    };
+    const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2, radius: 140, active: false };
+    window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; mouse.active = true; });
+    window.addEventListener('mouseleave', () => { mouse.active = false; });
 
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-      mouse.active = true;
-    });
-
-    window.addEventListener('mouseleave', () => {
-      mouse.active = false;
-    });
-
-    // Shockwave on click
+    // Click shockwave
     window.addEventListener('click', (e) => {
       particles.forEach(p => {
-        const dx = p.x - e.clientX;
-        const dy = p.y - e.clientY;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 260) {
-          const force = (260 - dist) / 14;
-          p.vx += (dx / dist) * force;
-          p.vy += (dy / dist) * force;
-        }
+        const dx = p.x - e.clientX, dy = p.y - e.clientY;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 260) { const f = (260-dist)/14; p.vx += (dx/dist)*f; p.vy += (dy/dist)*f; }
       });
     });
 
-    // Particle Class
-    const particleColors = ['#00D9FF', '#FF6B9D', '#38BDF8', '#FFFFFF'];
+    const particleColors = ['#00D9FF','#FF6B9D','#38BDF8','#FFFFFF'];
     class Particle {
-      constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 1.2;
-        this.vy = (Math.random() - 0.5) * 1.2;
-        this.radius = Math.random() * 2.2 + 1;
-        this.baseRadius = this.radius;
-        this.color = particleColors[Math.floor(Math.random() * particleColors.length)];
-        this.alpha = Math.random() * 0.6 + 0.3;
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * width; this.y = Math.random() * height;
+        this.vx = (Math.random()-0.5)*1.2; this.vy = (Math.random()-0.5)*1.2;
+        this.radius = Math.random()*2.2+1; this.baseRadius = this.radius;
+        this.color = particleColors[Math.floor(Math.random()*particleColors.length)];
+        this.alpha = Math.random()*0.6+0.3;
       }
-
       update() {
-        // Friction dampening
-        this.vx *= 0.985;
-        this.vy *= 0.985;
-
-        // Base velocity
-        if (Math.abs(this.vx) < 0.2) this.vx += (Math.random() - 0.5) * 0.3;
-        if (Math.abs(this.vy) < 0.2) this.vy += (Math.random() - 0.5) * 0.3;
-
-        // Cursor attraction & repulsion physics
+        this.vx *= 0.985; this.vy *= 0.985;
+        if (Math.abs(this.vx)<0.2) this.vx += (Math.random()-0.5)*0.3;
+        if (Math.abs(this.vy)<0.2) this.vy += (Math.random()-0.5)*0.3;
         if (mouse.active) {
-          const dx = mouse.x - this.x;
-          const dy = mouse.y - this.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
+          const dx = mouse.x-this.x, dy = mouse.y-this.y;
+          const dist = Math.sqrt(dx*dx+dy*dy);
           if (dist < mouse.radius) {
-            // Soft gravitate towards mouse
-            const force = (mouse.radius - dist) / mouse.radius;
-            const angle = Math.atan2(dy, dx);
-            this.vx += Math.cos(angle) * force * 0.6;
-            this.vy += Math.sin(angle) * force * 0.6;
-            this.radius = this.baseRadius * 1.8;
-          } else {
-            this.radius = this.baseRadius;
-          }
+            const force = (mouse.radius-dist)/mouse.radius;
+            const angle = Math.atan2(dy,dx);
+            this.vx += Math.cos(angle)*force*0.6;
+            this.vy += Math.sin(angle)*force*0.6;
+            this.radius = this.baseRadius*1.8;
+          } else { this.radius = this.baseRadius; }
         }
-
-        this.x += this.vx;
-        this.y += this.vy;
-
-        // Bounce on edges
-        if (this.x < 0) { this.x = 0; this.vx *= -1; }
-        if (this.x > width) { this.x = width; this.vx *= -1; }
-        if (this.y < 0) { this.y = 0; this.vy *= -1; }
-        if (this.y > height) { this.y = height; this.vy *= -1; }
+        this.x += this.vx; this.y += this.vy;
+        if (this.x<0) { this.x=0; this.vx*=-1; }
+        if (this.x>width) { this.x=width; this.vx*=-1; }
+        if (this.y<0) { this.y=0; this.vy*=-1; }
+        if (this.y>height) { this.y=height; this.vy*=-1; }
       }
-
       draw() {
-        ctx.save();
-        ctx.globalAlpha = this.alpha;
-        ctx.fillStyle = this.color;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fill();
+        ctx.save(); ctx.globalAlpha = this.alpha;
+        ctx.fillStyle = this.color; ctx.shadowBlur = 8; ctx.shadowColor = this.color;
+        ctx.beginPath(); ctx.arc(this.x,this.y,this.radius,0,Math.PI*2); ctx.fill();
         ctx.restore();
       }
     }
 
-    // Initialize 90 particles
     const particles = [];
-    for (let i = 0; i < 90; i++) {
-      particles.push(new Particle());
-    }
+    for (let i=0; i<90; i++) particles.push(new Particle());
 
-    // Animation Loop
     function animate() {
-      ctx.clearRect(0, 0, width, height);
-
-      // Connect particles to each other if close
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 95) {
-            ctx.save();
-            ctx.strokeStyle = '#00D9FF';
-            ctx.globalAlpha = (1 - dist / 95) * 0.22;
-            ctx.lineWidth = 0.9;
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-            ctx.restore();
+      ctx.clearRect(0,0,width,height);
+      for (let i=0; i<particles.length; i++) {
+        for (let j=i+1; j<particles.length; j++) {
+          const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y;
+          const dist=Math.sqrt(dx*dx+dy*dy);
+          if (dist<95) {
+            ctx.save(); ctx.strokeStyle='#00D9FF'; ctx.globalAlpha=(1-dist/95)*0.22;
+            ctx.lineWidth=0.9; ctx.beginPath();
+            ctx.moveTo(particles[i].x,particles[i].y); ctx.lineTo(particles[j].x,particles[j].y);
+            ctx.stroke(); ctx.restore();
           }
         }
-
-        // Connect particles to mouse cursor if within range
         if (mouse.active) {
-          const mdx = mouse.x - particles[i].x;
-          const mdy = mouse.y - particles[i].y;
-          const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-
-          if (mdist < mouse.radius) {
-            ctx.save();
-            ctx.strokeStyle = '#FF6B9D';
-            ctx.globalAlpha = (1 - mdist / mouse.radius) * 0.45;
-            ctx.lineWidth = 1.2;
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.stroke();
-            ctx.restore();
+          const mdx=mouse.x-particles[i].x, mdy=mouse.y-particles[i].y;
+          const mdist=Math.sqrt(mdx*mdx+mdy*mdy);
+          if (mdist<mouse.radius) {
+            ctx.save(); ctx.strokeStyle='#FF6B9D'; ctx.globalAlpha=(1-mdist/mouse.radius)*0.45;
+            ctx.lineWidth=1.2; ctx.beginPath();
+            ctx.moveTo(particles[i].x,particles[i].y); ctx.lineTo(mouse.x,mouse.y);
+            ctx.stroke(); ctx.restore();
           }
         }
-
-        particles[i].update();
-        particles[i].draw();
+        particles[i].update(); particles[i].draw();
       }
-
       requestAnimationFrame(animate);
     }
     animate();
 
     /* ============================================================
-       2. 3D CARD PARALLAX TILT EFFECT (FOLLOWS MOUSE)
+       3. 3D CARD PARALLAX TILT EFFECT
        ============================================================ */
     const heroCard = document.getElementById('heroCard');
     window.addEventListener('mousemove', (e) => {
       const rect = heroCard.getBoundingClientRect();
-      const cardCenterX = rect.left + rect.width / 2;
-      const cardCenterY = rect.top + rect.height / 2;
-
-      const deltaX = (e.clientX - cardCenterX) / (window.innerWidth / 2);
-      const deltaY = (e.clientY - cardCenterY) / (window.innerHeight / 2);
-
-      // Smooth tilt
-      const rotateX = -deltaY * 7;
-      const rotateY = deltaX * 7;
-
-      heroCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      const cx = rect.left + rect.width/2, cy = rect.top + rect.height/2;
+      const dx = (e.clientX-cx)/(window.innerWidth/2);
+      const dy = (e.clientY-cy)/(window.innerHeight/2);
+      heroCard.style.transform = `perspective(1000px) rotateX(${-dy*7}deg) rotateY(${dx*7}deg)`;
     });
 
     /* ============================================================
-       3. INTERACTIVE TERMINAL EMULATOR
+       4. AMBIENT MUSIC VISUALIZER (VISUAL ONLY - NO SOUND)
        ============================================================ */
-    const terminalInput = document.getElementById('terminalInput');
+    const vizCanvas = document.getElementById('visualizer-canvas');
+    const vizCtx = vizCanvas.getContext('2d');
+    let vizWidth, vizHeight;
+
+    function resizeViz() {
+      vizWidth = vizCanvas.width = window.innerWidth;
+      vizHeight = vizCanvas.height = 90;
+    }
+    window.addEventListener('resize', resizeViz);
+    resizeViz();
+
+    // Simulated frequency data — multi-layered sine waves at different speeds
+    const vizBands = 80;
+    const vizPhases = Array.from({length: vizBands}, (_, i) => Math.random() * Math.PI * 2);
+    const vizFreqs  = Array.from({length: vizBands}, (_, i) => 0.012 + (i / vizBands) * 0.03);
+    const vizAmps   = Array.from({length: vizBands}, (_, i) => {
+      // Bell curve shape — louder in the middle frequencies
+      const x = (i / vizBands - 0.5) * 2;
+      return (0.55 - x*x*0.5) * vizHeight * 0.72;
+    });
+    let vizTick = 0;
+
+    function drawVisualizer() {
+      vizCtx.clearRect(0, 0, vizWidth, vizHeight);
+      vizTick += 0.6;
+
+      const barW = vizWidth / vizBands;
+      for (let i = 0; i < vizBands; i++) {
+        // Compute simulated bar height
+        const t = vizTick * vizFreqs[i] + vizPhases[i];
+        const h = (Math.sin(t) * 0.5 + 0.5) * vizAmps[i] + 4;
+
+        // Color gradient from cyan (left) to pink (right)
+        const ratio = i / vizBands;
+        const r = Math.round(0   + ratio * 255);
+        const g = Math.round(217 - ratio * 110);
+        const b = Math.round(255 - ratio * 98);
+        const alpha = 0.55 + (h / vizHeight) * 0.4;
+
+        const grad = vizCtx.createLinearGradient(0, vizHeight, 0, vizHeight - h);
+        grad.addColorStop(0,   `rgba(${r},${g},${b},0)`);
+        grad.addColorStop(0.6, `rgba(${r},${g},${b},${alpha * 0.7})`);
+        grad.addColorStop(1,   `rgba(${r},${g},${b},${alpha})`);
+
+        vizCtx.fillStyle = grad;
+        const x = i * barW + 1;
+        // Rounded top via arc
+        const barRadius = Math.min(3, barW / 2 - 1);
+        vizCtx.beginPath();
+        vizCtx.moveTo(x, vizHeight);
+        vizCtx.lineTo(x, vizHeight - h + barRadius);
+        vizCtx.quadraticCurveTo(x, vizHeight - h, x + barRadius, vizHeight - h);
+        vizCtx.lineTo(x + barW - barRadius - 2, vizHeight - h);
+        vizCtx.quadraticCurveTo(x + barW - 2, vizHeight - h, x + barW - 2, vizHeight - h + barRadius);
+        vizCtx.lineTo(x + barW - 2, vizHeight);
+        vizCtx.closePath();
+        vizCtx.fill();
+      }
+      requestAnimationFrame(drawVisualizer);
+    }
+    drawVisualizer();
+
+    /* ============================================================
+       5. PROJECT FILTER BUTTONS
+       ============================================================ */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('#projectsGrid .project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter cards
+        projectCards.forEach((card, idx) => {
+          const cat = card.dataset.category;
+          const match = filter === 'all' || cat === filter;
+          if (match) {
+            card.classList.remove('hidden');
+            // Staggered fade-in
+            card.style.animationDelay = (idx * 0.07) + 's';
+            card.classList.remove('fade-in');
+            void card.offsetWidth; // reflow
+            card.classList.add('fade-in');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    /* ============================================================
+       6. PROJECT DETAIL MODAL
+       ============================================================ */
+    const modal       = document.getElementById('projectModal');
+    const modalClose  = document.getElementById('modalClose');
+    const modalLabel  = document.getElementById('modalLabel');
+    const modalTitle  = document.getElementById('modalTitle');
+    const modalMeta   = document.getElementById('modalMeta');
+    const modalDesc   = document.getElementById('modalDesc');
+    const modalTags   = document.getElementById('modalTags');
+    const modalLink   = document.getElementById('modalLink');
+
+    function openModal(card) {
+      modalLabel.textContent = card.dataset.label || 'PROJECT';
+      modalTitle.textContent = card.dataset.title;
+      modalMeta.innerHTML    = card.dataset.meta;
+      modalDesc.textContent  = card.dataset.desc;
+      modalLink.href         = card.dataset.link;
+
+      // Tags
+      modalTags.innerHTML = '';
+      (card.dataset.tags || '').split(',').forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'project-tag';
+        span.textContent = t.trim();
+        modalTags.appendChild(span);
+      });
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    projectCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        // Don't open if user clicked the repo button
+        if (e.target.classList.contains('project-btn') || e.target.closest('.project-btn')) return;
+        openModal(card);
+      });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    /* ============================================================
+       7. SCROLL REVEAL (INTERSECTION OBSERVER)
+       ============================================================ */
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target); // Only animate once
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    /* ============================================================
+       8. INTERACTIVE TERMINAL EMULATOR
+       ============================================================ */
+    const terminalInput  = document.getElementById('terminalInput');
     const terminalOutput = document.getElementById('terminalOutput');
+    const terminalBody   = document.getElementById('terminalBody');
 
     const commands = {
-      help: "Kullanılabilir komutlar:\n  about     - Yusuf Baran Yıldız hakkında özet\n  skills    - Teknik yetkinlikler ve araçlar\n  projects  - Öne çıkan projeler listesi\n  edu       - Eğitim ve akademik bilgiler\n  contact   - İletişim adresleri\n  clear     - Terminal ekranını temizle",
-      about: "Yusuf Baran Yıldız\nYazılım Mühendisi (Antalya Belek Üniv. Tam Burslu Mezun 2026)\nOdak: Multi-Agent Sistemler, LLM Entegrasyonu, Derin Öğrenme, Agentic ERP.",
-      skills: "Diller: Python, C#, JavaScript, TypeScript, C++\nYapay Zekâ: LangChain, Llama3, Docling, PyTorch, TensorFlow, Scikit-Learn\nWeb & Cloud: ASP.NET Core 8, FastAPI, React, PostgreSQL RLS, Docker, Git",
-      projects: "1. Orbital Shield (NASA API Multi-Agent Uzay Tehdidi İzleme)\n2. WeatherWise (FastAPI + Llama3 Karar Destek, Hackathon 7.)\n3. BAP Süreç Yönetimi (ASP.NET Core 8 + React + PostgreSQL RLS)\n4. IBM Granite 4.0 Doküman Özetleme (LangChain + Docling)\n5. kamerakontrol.com (Endüstriyel AI Platformu)",
-      edu: "Antalya Belek Üniversitesi — Yazılım Mühendisliği (Lisans, Tam Burslu, 2023-2026)\nSakarya Uygulamalı Bilimler Üniv. — Bilgisayar Destekli Tasarım (Ön Lisans, 2021-2023)",
-      contact: "Email: yusufbarany1@gmail.com\nLinkedIn: linkedin.com/in/yusuf-baran-yildiz\nGitHub: github.com/YusufBaranYildiz",
-      clear: "__CLEAR__"
+      help:     "Kullanilabilir komutlar:\n  about     - Yusuf Baran Yildiz hakkinda ozet\n  skills    - Teknik yetkinlikler ve araclar\n  projects  - One cikan projeler listesi\n  edu       - Egitim ve akademik bilgiler\n  contact   - Iletisim adresleri\n  theme     - Temayı degistir (dark/light)\n  clear     - Terminal ekranini temizle",
+      about:    "Yusuf Baran Yildiz\nYazilim Muhendisi (Antalya Belek Univ. Tam Burslu Mezun 2026)\nOdak: Multi-Agent Sistemler, LLM Entegrasyonu, Derin Ogrenme, Agentic ERP.",
+      skills:   "Diller: Python, C#, JavaScript, TypeScript, C++\nYapay Zeka: LangChain, Llama3, Docling, PyTorch, TensorFlow, Scikit-Learn\nWeb & Cloud: ASP.NET Core 8, FastAPI, React, PostgreSQL RLS, Docker, Git",
+      projects: "1. Orbital Shield (NASA API Multi-Agent Uzay Tehdidi Izleme)\n2. WeatherWise (FastAPI + Llama3 Karar Destek, Hackathon 7.)\n3. BAP Surec Yonetimi (ASP.NET Core 8 + React + PostgreSQL RLS)\n4. IBM Granite 4.0 Dokuman Ozetleme (LangChain + Docling)\n5. kamerakontrol.com (Endustriyel AI Platformu)",
+      edu:      "Antalya Belek Universitesi — Yazilim Muhendisligi (Lisans, Tam Burslu, 2023-2026)\nSakarya Uygulamali Bilimler Univ. — Bilgisayar Destekli Tasarim (On Lisans, 2021-2023)",
+      contact:  "Email:    yusufbarany1@gmail.com\nLinkedIn: linkedin.com/in/yusuf-baran-yildiz-136187300\nGitHub:   github.com/YusufBaranYildiz",
+      theme:    "__THEME__",
+      clear:    "__CLEAR__"
     };
 
     terminalInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        const cmd = terminalInput.value.trim().toLowerCase();
-        terminalInput.value = '';
+      if (e.key !== 'Enter') return;
+      const cmd = terminalInput.value.trim().toLowerCase();
+      terminalInput.value = '';
+      if (!cmd) return;
 
-        if (!cmd) return;
-
-        if (cmd === 'clear') {
-          terminalOutput.textContent = '';
-          return;
-        }
-
-        const response = commands[cmd] || `Komut bulunamadı: '${cmd}'. Kullanılabilir komutlar için 'help' yazın.`;
-        terminalOutput.textContent += `\n\nyby@ai-lab:~$ ${cmd}\n${response}`;
-        
-        // Auto scroll
-        const terminalBody = document.getElementById('terminalBody');
+      if (cmd === 'clear') { terminalOutput.textContent = ''; return; }
+      if (cmd === 'theme') {
+        const current = html.getAttribute('data-theme');
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+        terminalOutput.textContent += `\n\nyby@ai-lab:~$ ${cmd}\nTema degistirildi: ${html.getAttribute('data-theme').toUpperCase()}`;
         terminalBody.scrollTop = terminalBody.scrollHeight;
+        return;
       }
+
+      const response = commands[cmd] || `Komut bulunamadi: '${cmd}'. Kullanilabilir komutlar icin 'help' yazin.`;
+      terminalOutput.textContent += `\n\nyby@ai-lab:~$ ${cmd}\n${response}`;
+      terminalBody.scrollTop = terminalBody.scrollHeight;
     });
+
+    // Auto-focus terminal on click
+    document.getElementById('terminalBody').addEventListener('click', () => terminalInput.focus());
+
   </script>
 </body>
 </html>
