@@ -27,6 +27,8 @@
   </a>
   <a href="#benimle-iletişime-geçin">
     <img src="https://img.shields.io/badge/Status-Open%20To%20Work-10B981?style=for-the-badge&labelColor=0D1B24" alt="Status"/>
+  <a href="https://yusufbaranyildiz.github.io/YusufBaranYildiz/" target="_blank">
+    <img src="https://img.shields.io/badge/%C4%B0nteraktif%203D%20Portfolyo-%C4%B0mle%C3%A7%20Takipli%20Par%C3%A7ac%C4%B1k%20Deneyimi%20%E2%86%92-00D9FF?style=for-the-badge&logo=three.js&logoColor=white&labelColor=0D1B24" alt="İnteraktif Deneyim"/>
   </a>
 </p>
 

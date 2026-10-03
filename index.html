@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yusuf Baran Yıldız | Interactive AI &amp; Software Engineering Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #060D13;
+      color: #E2F2FC;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Fullscreen Interactive Particle Canvas */
+    #particle-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Ambient Glow Backgrounds */
+    .glow-cyan {
+      position: fixed;
+      top: -10%;
+      right: -5%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 217, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .glow-pink {
+      position: fixed;
+      bottom: -15%;
+      left: -10%;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(255, 107, 157, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Main Container */
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* Top Navigation HUD */
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 24px;
+      background: rgba(10, 24, 34, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 217, 255, 0.25);
+      border-radius: 14px;
+      margin-bottom: 40px;
+    }
+
+    .brand {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: #00D9FF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      background: #10B981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10B981;
+      animation: pulseDot 1.8s infinite;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .nav-links a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: #94B4C7;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #00D9FF;
+      text-shadow: 0 0 8px rgba(0, 217, 255, 0.6);
+    }
+
+    /* 3D Interactive Tilt Hero Card */
+    .hero-card {
+      position: relative;
+      background: linear-gradient(135deg, rgba(14, 32, 45, 0.85) 0%, rgba(8, 19, 28, 0.95) 100%);
+      backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(0, 217, 255, 0.35);
+      border-radius: 24px;
+      padding: 50px 45px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 217, 255, 0.08);
+      transform-style: preserve-3d;
+      transition: transform 0.15s ease-out, box-shadow 0.25s ease;
+      cursor: crosshair;
+      margin-bottom: 48px;
+    }
+
+    .hero-card:hover {
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 45px rgba(0, 217, 255, 0.2);
+    }
+
+    .hero-prefix {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      color: #FF6B9D;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .hero-title {
+      font-size: 52px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #FFFFFF 0%, #C4F4FF 50%, #00D9FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+
+    .hero-role {
+      font-size: 22px;
+      font-weight: 700;
+      color: #00D9FF;
+      margin-bottom: 18px;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #9DBECE;
+      max-width: 780px;
+      margin-bottom: 30px;
+    }
+
+    /* Interactive Skill Pills */
+    .pill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 18px;
+      background: rgba(12, 30, 42, 0.75);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      border-radius: 20px;
+      color: #D9F6FF;
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .pill:hover {
+      transform: translateY(-4px) scale(1.05);
+      background: #00D9FF;
+      color: #08131C;
+      box-shadow: 0 8px 20px rgba(0, 217, 255, 0.4);
+      border-color: #00D9FF;
+    }
+
+    /* Section Headers */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .section-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+    }
+
+    .section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #00D9FF;
+    }
+
+    /* Interactive Project Cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .project-card {
+      background: rgba(12, 28, 38, 0.75);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 28px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #FF6B9D, #00D9FF);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0, 217, 255, 0.4);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 24px rgba(0, 217, 255, 0.12);
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+
+    .project-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #00D9FF;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .project-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #92B2C2;
+      margin-bottom: 20px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .project-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      background: #081721;
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: #7ADFFF;
+      border: 1px solid rgba(0, 217, 255, 0.2);
+    }
+
+    .project-btn {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: #00D9FF;
+      text-decoration: none;
+      padding: 8px 16px;
+      background: rgba(0, 217, 255, 0.1);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .project-btn:hover {
+      background: #00D9FF;
+      color: #07121B;
+      box-shadow: 0 0 16px rgba(0, 217, 255, 0.4);
+    }
+
+    /* Live Interactive Terminal */
+    .terminal-box {
+      background: #08141D;
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+      margin-bottom: 50px;
+    }
+
+    .terminal-header {
+      background: #0F2634;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #FF5F56; }
+    .dot-yellow { background: #FFBD2E; }
+    .dot-green { background: #27C93F; }
+
+    .terminal-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #7899AC;
+      margin-left: 12px;
+    }
+
+    .terminal-body {
+      padding: 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      min-height: 200px;
+      line-height: 1.7;
+    }
+
+    .terminal-output {
+      color: #A3C5D6;
+      margin-bottom: 14px;
+      white-space: pre-wrap;
+    }
+
+    .terminal-input-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .terminal-prompt {
+      color: #00D9FF;
+      font-weight: 700;
+    }
+
+    .terminal-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #FFFFFF;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #6C8E9F;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 36px; }
+      .hero-card { padding: 32px 24px; }
+      .nav-bar { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Canvas for Real-Time Cursor Following Particles -->
+  <canvas id="particle-canvas"></canvas>
+  <div class="glow-cyan"></div>
+  <div class="glow-pink"></div>
+
+  <div class="container">
+    <!-- Top Navigation HUD -->
+    <header class="nav-bar">
+      <div class="brand">
+        <span class="status-dot"></span>
+        <span>YUSUF_BARAN_YILDIZ // AI_CORE v2.6</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#projects">Projeler</a>
+        <a href="#terminal">Terminal</a>
+        <a href="https://github.com/YusufBaranYildiz" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/yusuf-baran-yildiz-136187300/" target="_blank">LinkedIn</a>
+      </nav>
+    </header>
+
+    <!-- 3D Interactive Tilt Hero Card -->
+    <section class="hero-card" id="heroCard">
+      <div class="hero-prefix">// SOFTWARE ENGINEER &bull; AI DEVELOPER</div>
+      <h1 class="hero-title">Yusuf Baran Yıldız</h1>
+      <div class="hero-role">Multi-Agent Systems &bull; Deep Learning &bull; LLM Integration</div>
+      <p class="hero-desc">
+        Antalya Belek Üniversitesi Yazılım Mühendisliği mezunuyum. Çok ajanlı (multi-agent) otonom sistemler, LLM entegrasyonu (Llama3, LangChain) ve endüstriyel yapay zekâ çözümleri üzerine çalışıyorum.
+      </p>
+
+      <div class="pill-grid">
+        <span class="pill">Multi-Agent Architecture</span>
+        <span class="pill">Deep Learning</span>
+        <span class="pill">Llama3 &amp; LangChain</span>
+        <span class="pill">Computer Vision</span>
+        <span class="pill">ASP.NET Core 8 &amp; React</span>
+        <span class="pill">FastAPI</span>
+        <span class="pill">PostgreSQL RLS</span>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-header">
+        <h2 class="section-title">ÖNE ÇIKAN PROJELER</h2>
+        <span class="section-tag">// PORTFOLIO DIRECTORY</span>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Orbital Shield -->
+        <article class="project-card">
+          <div>
+            <h3 class="project-title">Orbital Shield</h3>
+            <div class="project-meta">Kaggle AI Agents Intensive Capstone &bull; 2026</div>
+            <p class="project-desc">
+              NASA NeoWs API tabanlı çok ajanlı (multi-agent) otonom uzay tehdidi erken uyarı ve yörünge izleme sistemi. Canlı retro-fütüristik dashboard entegrasyonu.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Multi-Agent</span>
+              <span class="project-tag">NASA API</span>
+              <span class="project-tag">Dashboard</span>
+            </div>
+          </div>
+          <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Repository İncele &rarr;</a>
+        </article>
+
+        <!-- WeatherWise -->
+        <article class="project-card">
+          <div>
+            <h3 class="project-title">WeatherWise</h3>
+            <div class="project-meta">Sivas Üniversitesi Anadolu Hackathon 7.'si &bull; 2026</div>
+            <p class="project-desc">
+              FastAPI, yerel Llama3 modeli ve Telegram bot entegrasyonuyla hava durumu verisine dayalı akıllı karar destek sistemi. Parçacık efektli animasyonlu arayüz.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">Llama3</span>
+              <span class="project-tag">Telegram Bot</span>
+              <span class="project-tag">Decision Support</span>
+            </div>
+          </div>
+          <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Repository İncele &rarr;</a>
+        </article>
+
+        <!-- BAP Süreç Yönetimi -->
+        <article class="project-card">
+          <div>
+            <h3 class="project-title">BAP Süreç Yönetim Platformu</h3>
+            <div class="project-meta">Bilimsel Araştırma Projeleri Bitirme Tezi &bull; 2026</div>
+            <p class="project-desc">
+              ASP.NET Core/.NET 8, React ve PostgreSQL (Neon) ile çok şemalı (multi-schema) ve Row-Level Security (RLS) güvenlikli tam teşekküllü kurumsal süreç yönetim mimarisi.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">ASP.NET Core 8</span>
+              <span class="project-tag">React</span>
+              <span class="project-tag">PostgreSQL RLS</span>
+              <span class="project-tag">JWT RBAC</span>
+            </div>
+          </div>
+          <a class="project-btn" href="https://github.com/YusufBaranYildiz/antalya-belek-proje-surec-yonetimi-v0.5" target="_blank">Repository İncele &rarr;</a>
+        </article>
+
+        <!-- IBM Granite Doküman Özetleme -->
+        <article class="project-card">
+          <div>
+            <h3 class="project-title">IBM Granite 4.0 Doküman Özetleme</h3>
+            <div class="project-meta">LangChain &bull; Docling &bull; Replicate</div>
+            <p class="project-desc">
+              LangChain, Docling ve Replicate ile Project Gutenberg büyük külliyat metinleri üzerinde çalışan akıllı bağlamsal doküman özetleme sistemi.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">IBM Granite</span>
+              <span class="project-tag">LangChain</span>
+              <span class="project-tag">Docling</span>
+              <span class="project-tag">Replicate</span>
+            </div>
+          </div>
+          <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Repository İncele &rarr;</a>
+        </article>
+
+        <!-- kamerakontrol.com -->
+        <article class="project-card">
+          <div>
+            <h3 class="project-title">kamerakontrol.com</h3>
+            <div class="project-meta">AIOR Teknoloji &bull; Endüstriyel AI Platformu &bull; 2026</div>
+            <p class="project-desc">
+              Endüstriyel kalite kontrol, yangın algılama, plaka tanıma ve kumaş muayene sistemlerini sunan yayına alınmış kurumsal yapay zekâ ürün platformu.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Computer Vision</span>
+              <span class="project-tag">Industrial AI</span>
+              <span class="project-tag">Product Architecture</span>
+            </div>
+          </div>
+          <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Platform Detayları &rarr;</a>
+        </article>
+
+        <!-- KPMG IxT -->
+        <article class="project-card">
+          <div>
+            <h3 class="project-title">KPMG IxT Olimpiyatları Vaka Çalışması</h3>
+            <div class="project-meta">Türkiye Geneli 40 Kişilik Final &bull; 2026</div>
+            <p class="project-desc">
+              Üç aşamalı elemeyi geçerek KPMG yetkililerine sunulan, makroekonomik belirsizlik analizi ve portföy yatırım tavsiyesi veri bilimi vaka çalışması.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Data Science</span>
+              <span class="project-tag">Macro Modeling</span>
+              <span class="project-tag">Finalist</span>
+            </div>
+          </div>
+          <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Profil Detayları &rarr;</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Interactive Terminal -->
+    <section id="terminal">
+      <div class="section-header">
+        <h2 class="section-title">İNTERAKTİF KOMUT TERMİNALİ</h2>
+        <span class="section-tag">// YBY REPL SHELL</span>
+      </div>
+
+      <div class="terminal-box">
+        <div class="terminal-header">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="terminal-title">yby@terminal ~ interactive_shell</span>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <div class="terminal-output" id="terminalOutput">Hoş geldiniz. Kullanılabilir komutları görmek için 'help' yazın.
+Örnek komutlar: help, skills, projects, contact, clear</div>
+          <div class="terminal-input-row">
+            <span class="terminal-prompt">yby@ai-lab:~$</span>
+            <input type="text" class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false" placeholder="komut girin...">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div>Designed &amp; Engineered by Yusuf Baran YILDIZ &bull; 2026</div>
+    </footer>
+  </div>
+
+  <script>
+    /* ============================================================
+       1. INTERACTIVE MOUSE CURSOR TRACKING PARTICLE SYSTEM
+       ============================================================ */
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let width, height;
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    // Mouse coordinates
+    const mouse = {
+      x: window.innerWidth / 2,
+      y: window.innerHeight / 2,
+      radius: 140,
+      active: false
+    };
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      mouse.active = true;
+    });
+
+    window.addEventListener('mouseleave', () => {
+      mouse.active = false;
+    });
+
+    // Shockwave on click
+    window.addEventListener('click', (e) => {
+      particles.forEach(p => {
+        const dx = p.x - e.clientX;
+        const dy = p.y - e.clientY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 260) {
+          const force = (260 - dist) / 14;
+          p.vx += (dx / dist) * force;
+          p.vy += (dy / dist) * force;
+        }
+      });
+    });
+
+    // Particle Class
+    const particleColors = ['#00D9FF', '#FF6B9D', '#38BDF8', '#FFFFFF'];
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 1.2;
+        this.vy = (Math.random() - 0.5) * 1.2;
+        this.radius = Math.random() * 2.2 + 1;
+        this.baseRadius = this.radius;
+        this.color = particleColors[Math.floor(Math.random() * particleColors.length)];
+        this.alpha = Math.random() * 0.6 + 0.3;
+      }
+
+      update() {
+        // Friction dampening
+        this.vx *= 0.985;
+        this.vy *= 0.985;
+
+        // Base velocity
+        if (Math.abs(this.vx) < 0.2) this.vx += (Math.random() - 0.5) * 0.3;
+        if (Math.abs(this.vy) < 0.2) this.vy += (Math.random() - 0.5) * 0.3;
+
+        // Cursor attraction & repulsion physics
+        if (mouse.active) {
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < mouse.radius) {
+            // Soft gravitate towards mouse
+            const force = (mouse.radius - dist) / mouse.radius;
+            const angle = Math.atan2(dy, dx);
+            this.vx += Math.cos(angle) * force * 0.6;
+            this.vy += Math.sin(angle) * force * 0.6;
+            this.radius = this.baseRadius * 1.8;
+          } else {
+            this.radius = this.baseRadius;
+          }
+        }
+
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Bounce on edges
+        if (this.x < 0) { this.x = 0; this.vx *= -1; }
+        if (this.x > width) { this.x = width; this.vx *= -1; }
+        if (this.y < 0) { this.y = 0; this.vy *= -1; }
+        if (this.y > height) { this.y = height; this.vy *= -1; }
+      }
+
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.fillStyle = this.color;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    // Initialize 90 particles
+    const particles = [];
+    for (let i = 0; i < 90; i++) {
+      particles.push(new Particle());
+    }
+
+    // Animation Loop
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Connect particles to each other if close
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 95) {
+            ctx.save();
+            ctx.strokeStyle = '#00D9FF';
+            ctx.globalAlpha = (1 - dist / 95) * 0.22;
+            ctx.lineWidth = 0.9;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+            ctx.restore();
+          }
+        }
+
+        // Connect particles to mouse cursor if within range
+        if (mouse.active) {
+          const mdx = mouse.x - particles[i].x;
+          const mdy = mouse.y - particles[i].y;
+          const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+
+          if (mdist < mouse.radius) {
+            ctx.save();
+            ctx.strokeStyle = '#FF6B9D';
+            ctx.globalAlpha = (1 - mdist / mouse.radius) * 0.45;
+            ctx.lineWidth = 1.2;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+            ctx.restore();
+          }
+        }
+
+        particles[i].update();
+        particles[i].draw();
+      }
+
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    /* ============================================================
+       2. 3D CARD PARALLAX TILT EFFECT (FOLLOWS MOUSE)
+       ============================================================ */
+    const heroCard = document.getElementById('heroCard');
+    window.addEventListener('mousemove', (e) => {
+      const rect = heroCard.getBoundingClientRect();
+      const cardCenterX = rect.left + rect.width / 2;
+      const cardCenterY = rect.top + rect.height / 2;
+
+      const deltaX = (e.clientX - cardCenterX) / (window.innerWidth / 2);
+      const deltaY = (e.clientY - cardCenterY) / (window.innerHeight / 2);
+
+      // Smooth tilt
+      const rotateX = -deltaY * 7;
+      const rotateY = deltaX * 7;
+
+      heroCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    /* ============================================================
+       3. INTERACTIVE TERMINAL EMULATOR
+       ============================================================ */
+    const terminalInput = document.getElementById('terminalInput');
+    const terminalOutput = document.getElementById('terminalOutput');
+
+    const commands = {
+      help: "Kullanılabilir komutlar:\n  about     - Yusuf Baran Yıldız hakkında özet\n  skills    - Teknik yetkinlikler ve araçlar\n  projects  - Öne çıkan projeler listesi\n  edu       - Eğitim ve akademik bilgiler\n  contact   - İletişim adresleri\n  clear     - Terminal ekranını temizle",
+      about: "Yusuf Baran Yıldız\nYazılım Mühendisi (Antalya Belek Üniv. Tam Burslu Mezun 2026)\nOdak: Multi-Agent Sistemler, LLM Entegrasyonu, Derin Öğrenme, Agentic ERP.",
+      skills: "Diller: Python, C#, JavaScript, TypeScript, C++\nYapay Zekâ: LangChain, Llama3, Docling, PyTorch, TensorFlow, Scikit-Learn\nWeb & Cloud: ASP.NET Core 8, FastAPI, React, PostgreSQL RLS, Docker, Git",
+      projects: "1. Orbital Shield (NASA API Multi-Agent Uzay Tehdidi İzleme)\n2. WeatherWise (FastAPI + Llama3 Karar Destek, Hackathon 7.)\n3. BAP Süreç Yönetimi (ASP.NET Core 8 + React + PostgreSQL RLS)\n4. IBM Granite 4.0 Doküman Özetleme (LangChain + Docling)\n5. kamerakontrol.com (Endüstriyel AI Platformu)",
+      edu: "Antalya Belek Üniversitesi — Yazılım Mühendisliği (Lisans, Tam Burslu, 2023-2026)\nSakarya Uygulamalı Bilimler Üniv. — Bilgisayar Destekli Tasarım (Ön Lisans, 2021-2023)",
+      contact: "Email: yusufbarany1@gmail.com\nLinkedIn: linkedin.com/in/yusuf-baran-yildiz\nGitHub: github.com/YusufBaranYildiz",
+      clear: "__CLEAR__"
+    };
+
+    terminalInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const cmd = terminalInput.value.trim().toLowerCase();
+        terminalInput.value = '';
+
+        if (!cmd) return;
+
+        if (cmd === 'clear') {
+          terminalOutput.textContent = '';
+          return;
+        }
+
+        const response = commands[cmd] || `Komut bulunamadı: '${cmd}'. Kullanılabilir komutlar için 'help' yazın.`;
+        terminalOutput.textContent += `\n\nyby@ai-lab:~$ ${cmd}\n${response}`;
+        
+        // Auto scroll
+        const terminalBody = document.getElementById('terminalBody');
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+      }
+    });
+  </script>
+</body>
+</html>
