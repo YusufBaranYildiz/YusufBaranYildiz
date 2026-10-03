@@ -25,7 +25,7 @@
 <circle class="hal" cx="150" cy="88" r="56" fill="url(#halo0)"/>
 <g class="fl" style="animation-delay:-0.0s">
 <circle cx="150" cy="88" r="34" fill="#0B1A22" stroke="url(#acc0)" stroke-width="2"/>
-<text class="em" x="150" y="100" font-size="34" text-anchor="middle">🏆</text>
+<text class="sf" x="150" y="95" font-size="18" font-weight="800" fill="#FF6B9D" text-anchor="middle">#01</text>
 </g>
 <text class="sf" x="150" y="34" font-size="12" font-weight="700" letter-spacing="4" fill="#FF6B9D" text-anchor="middle">YARIŞMA</text>
 <text class="sf" x="150" y="150" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle" textLength="157" lengthAdjust="spacingAndGlyphs">KPMG Olympics</text>
@@ -39,7 +39,7 @@
 <circle class="hal" cx="150" cy="88" r="56" fill="url(#halo1)"/>
 <g class="fl" style="animation-delay:-0.9s">
 <circle cx="150" cy="88" r="34" fill="#0B1A22" stroke="url(#acc1)" stroke-width="2"/>
-<text class="em" x="150" y="100" font-size="34" text-anchor="middle">🚀</text>
+<text class="sf" x="150" y="95" font-size="18" font-weight="800" fill="#00D9FF" text-anchor="middle">#02</text>
 </g>
 <text class="sf" x="150" y="34" font-size="12" font-weight="700" letter-spacing="4" fill="#00D9FF" text-anchor="middle">HACKATHON</text>
 <text class="sf" x="150" y="150" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle" textLength="206" lengthAdjust="spacingAndGlyphs">Anadolu Hackathon</text>
@@ -53,7 +53,7 @@
 <circle class="hal" cx="150" cy="88" r="56" fill="url(#halo2)"/>
 <g class="fl" style="animation-delay:-1.8s">
 <circle cx="150" cy="88" r="34" fill="#0B1A22" stroke="url(#acc2)" stroke-width="2"/>
-<text class="em" x="150" y="100" font-size="34" text-anchor="middle">🎓</text>
+<text class="sf" x="150" y="95" font-size="18" font-weight="800" fill="#FF6B9D" text-anchor="middle">#03</text>
 </g>
 <text class="sf" x="150" y="34" font-size="12" font-weight="700" letter-spacing="4" fill="#FF6B9D" text-anchor="middle">LİSANS</text>
 <text class="sf" x="150" y="150" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle" textLength="242" lengthAdjust="spacingAndGlyphs">Yazılım Mühendisliği</text>

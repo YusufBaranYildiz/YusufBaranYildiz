@@ -1,88 +1,88 @@
 <!-- ============================================================== -->
-<!-- 🚀 YUSUF BARAN YILDIZ - DYNAMIC ANIMATED GITHUB PROFILE README -->
+<!-- YUSUF BARAN YILDIZ - DYNAMIC ANIMATED GITHUB PROFILE README -->
 <!-- ============================================================== -->
 
-<!-- 🌌 ANIMATED HERO BANNER -->
+<!-- ANIMATED HERO BANNER -->
 <p align="center">
   <img src="assets/header.svg" width="100%" alt="Yusuf Baran Yıldız — Yazılım Mühendisi · AI & Machine Learning"/>
 </p>
 
-<!-- ⚡ DYNAMIC TYPEWRITER TITLE -->
+<!-- DYNAMIC TYPEWRITER TITLE -->
 <p align="center">
   <a href="https://github.com/YusufBaranYildiz">
-    <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=24&duration=2800&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&width=780&height=95&lines=Software+Engineer+%7C+Antalya+Belek+University+2026;AI+%26+Deep+Learning+Developer;PyTorch+%E2%80%A2+TensorFlow+%E2%80%A2+Computer+Vision+%E2%80%A2+AI+Agents;KPMG+Olympics+Finalist+%F0%9F%8F%86;Anadolu+Hackathon+7th+Place+%F0%9F%9A%80;Building+Next-Gen+Intelligent+Autonomous+Systems" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=24&duration=2800&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&width=780&height=95&lines=Software+Engineer+%7C+Antalya+Belek+University+2026;AI+%26+Deep+Learning+Developer;PyTorch+%E2%80%A2+TensorFlow+%E2%80%A2+Computer+Vision+%E2%80%A2+AI+Agents;KPMG+Olympics+Finalist;Anadolu+Hackathon+7th+Place;Building+Next-Gen+Intelligent+Autonomous+Systems" alt="Typing SVG" />
   </a>
 </p>
 
-<!-- 🏷️ HIGHLIGHT BADGES -->
+<!-- HIGHLIGHT BADGES -->
 <p align="center">
   <a href="https://github.com/YusufBaranYildiz">
     <img src="https://img.shields.io/badge/Yaz%C4%B1l%C4%B1m%20M%C3%BChendisi-Mezun%202026-00D9FF?style=for-the-badge&logo=codeforces&logoColor=white&labelColor=0D1B24" alt="Yazılım Mühendisi - Mezun 2026"/>
   </a>
-  <a href="#-başarılar--yarışmalar">
+  <a href="#başarılar--yarışmalar">
     <img src="https://img.shields.io/badge/KPMG%20Olympics-Finalist-FF6B9D?style=for-the-badge&logo=target&logoColor=white&labelColor=0D1B24" alt="KPMG Olympics Finalist"/>
   </a>
-  <a href="#-başarılar--yarışmalar">
-    <img src="https://img.shields.io/badge/Anadolu%20Hackathon-7th%20Place-00D9FF?style=for-the-badge&logo=rocket&logoColor=white&labelColor=0D1B24" alt="Anadolu Hackathon 7th Place"/>
+  <a href="#başarılar--yarışmalar">
+    <img src="https://img.shields.io/badge/Anadolu%20Hackathon-7th%20Place-00D9FF?style=for-the-badge&logo=codeforces&logoColor=white&labelColor=0D1B24" alt="Anadolu Hackathon 7th Place"/>
   </a>
-  <a href="#-benimle-iletişime-geçin">
-    <img src="https://img.shields.io/badge/Status-Open%20To%20Work%20%F0%9F%9F%A2-10B981?style=for-the-badge&labelColor=0D1B24" alt="Status"/>
+  <a href="#benimle-iletişime-geçin">
+    <img src="https://img.shields.io/badge/Status-Open%20To%20Work-10B981?style=for-the-badge&labelColor=0D1B24" alt="Status"/>
   </a>
 </p>
 
-<!-- 💫 NEON COMET DIVIDER -->
+<!-- NEON COMET DIVIDER -->
 <p align="center">
   <img src="assets/divider.svg" width="100%" alt="Divider"/>
 </p>
 
-<!-- ==================== 👨‍💻 ABOUT ME ==================== -->
-<h2 align="center">👨‍💻 Hakkımda</h2>
+<!-- ==================== ABOUT ME ==================== -->
+<h2 align="center">Hakkımda</h2>
 
 <p align="center">
-  👋 Merhaba! 2026 yılında <b>Antalya Belek Üniversitesi Yazılım Mühendisliği</b> bölümünden tam burslu olarak mezun oldum.<br/>
-  Tutkuyla <b>Yapay Zekâ, Derin Öğrenme (Deep Learning) ve Makine Öğrenmesi</b> ekosistemine odaklanıyorum.<br/>
-  Büyük ölçekli veri analitiği, bilgisayarlı görü (Computer Vision), otonom AI ajanları ve gerçek dünya problemlerini çözen akıllı sistemler geliştiriyorum.
+  Merhaba! 2026 yılında <b>Antalya Belek Üniversitesi Yazılım Mühendisliği</b> bölümünden tam burslu olarak mezun oldum.<br/>
+  <b>Yapay Zekâ, Derin Öğrenme (Deep Learning) ve Makine Öğrenmesi</b> ekosistemine odaklanıyorum.<br/>
+  Büyük ölçekli veri analitiği, bilgisayarlı görü (Computer Vision), otonom AI ajanları ve gerçek dünya problemlerini çözen sistemler geliştiriyorum.
 </p>
 
 <p align="center">
-  🎓 <b>Antalya Belek Üniversitesi</b> — Yazılım Mühendisliği (Tam Burslu, 2026 Mezunu)<br/>
-  💼 <b>AIOR Teknoloji</b> — Stajyer (AI / ML & Yazılım Geliştirme)<br/>
-  🏆 <b>KPMG Olympics</b> Finalisti &nbsp;·&nbsp; 🚀 <b>Anadolu Hackathon</b> 7.'si<br/>
-  🤖 <b>Odak Alanları:</b> Deep Learning · Computer Vision · Predictive Analytics · Autonomous AI Agents<br/>
-  🎯 <b>Kariyer Hedefi:</b> <i>AI Engineer / Machine Learning Specialist</i>
+  <b>Antalya Belek Üniversitesi</b> — Yazılım Mühendisliği (Tam Burslu, 2026 Mezunu)<br/>
+  <b>AIOR Teknoloji</b> — Stajyer (AI / ML & Yazılım Geliştirme)<br/>
+  <b>KPMG Olympics</b> Finalisti &nbsp;·&nbsp; <b>Anadolu Hackathon</b> 7.'si<br/>
+  <b>Odak Alanları:</b> Deep Learning · Computer Vision · Predictive Analytics · Autonomous AI Agents<br/>
+  <b>Kariyer Hedefi:</b> <i>AI Engineer / Machine Learning Specialist</i>
 </p>
 
-<!-- 💻 ANIMATED PYTHON REPL TERMINAL -->
+<!-- ANIMATED PYTHON REPL TERMINAL -->
 <p align="center">
   <img src="assets/terminal.svg" width="90%" alt="Python REPL Terminal Animasyonu"/>
 </p>
 
-<!-- 💫 NEON COMET DIVIDER -->
+<!-- NEON COMET DIVIDER -->
 <p align="center">
   <img src="assets/divider.svg" width="100%" alt="Divider"/>
 </p>
 
-<!-- ==================== 🏆 ACHIEVEMENTS ==================== -->
-<h2 align="center">🏆 Başarılar &amp; Yarışmalar</h2>
+<!-- ==================== ACHIEVEMENTS ==================== -->
+<h2 align="center">Başarılar &amp; Yarışmalar</h2>
 
 <p align="center">
   <img src="assets/achievements.svg" width="100%" alt="KPMG Olympics Finalisti · Anadolu Hackathon 7.'si · Yazılım Mühendisliği Mezunu (2026)"/>
 </p>
 
-<!-- 💫 NEON COMET DIVIDER -->
+<!-- NEON COMET DIVIDER -->
 <p align="center">
   <img src="assets/divider.svg" width="100%" alt="Divider"/>
 </p>
 
-<!-- ==================== 🛠️ TECH STACK ==================== -->
-<h2 align="center">🛠️ Tech Stack &amp; Teknolojiler</h2>
+<!-- ==================== TECH STACK ==================== -->
+<h2 align="center">Tech Stack &amp; Teknolojiler</h2>
 
-<!-- 🔄 DUAL-ROW INFINITE ROTATING CAROUSEL -->
+<!-- DUAL-ROW INFINITE ROTATING CAROUSEL -->
 <p align="center">
   <img src="assets/skills.svg" width="100%" alt="Dual Row Infinite Scrolling Tech Stack"/>
 </p>
 
-<!-- 🎨 FLOATING TECH ICONS -->
+<!-- FLOATING TECH ICONS -->
 <p align="center">
   <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,scikitlearn,opencv,cpp,typescript,javascript,react,fastapi,nodejs,docker,git,github,linux,vscode&perline=8&theme=dark" alt="Tech Stack Icons"/>
 </p>
@@ -92,9 +92,9 @@
 
 <table>
   <tr>
-    <td align="center" width="33%"><b>🤖 AI &amp; Machine Learning</b></td>
-    <td align="center" width="33%"><b>🔥 Programlama Dilleri</b></td>
-    <td align="center" width="33%"><b>🌐 Web, Cloud &amp; Araçlar</b></td>
+    <td align="center" width="33%"><b>AI &amp; Machine Learning</b></td>
+    <td align="center" width="33%"><b>Programlama Dilleri</b></td>
+    <td align="center" width="33%"><b>Web, Cloud &amp; Araçlar</b></td>
   </tr>
   <tr>
     <td>
@@ -124,21 +124,20 @@
 
 </div>
 
-<!-- 💫 NEON COMET DIVIDER -->
+<!-- NEON COMET DIVIDER -->
 <p align="center">
   <img src="assets/divider.svg" width="100%" alt="Divider"/>
 </p>
 
-
-<!-- ==================== ⭐ FEATURED PROJECTS ==================== -->
-<h2 align="center">⭐ Öne Çıkan Projeler</h2>
+<!-- ==================== FEATURED PROJECTS ==================== -->
+<h2 align="center">Öne Çıkan Projeler</h2>
 
 <div align="center">
 
 <table width="100%">
   <tr>
     <td width="50%" valign="top">
-      <h3 align="center">🤖 AI Otomasyon Risk Tahmin Sistemi</h3>
+      <h3 align="center">AI Otomasyon Risk Tahmin Sistemi</h3>
       <p align="center">
         <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
         <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" />
@@ -146,9 +145,9 @@
       </p>
       <p>Gerçek dünya iş gücü verilerini işleyerek sektör bazlı otomasyon riskini tahmin eden gelişmiş makine öğrenmesi modeli.</p>
       <ul>
-        <li>✨ Gelişmiş veri ön işleme (Data Preprocessing) & feature engineering</li>
-        <li>✨ Karşılaştırmalı model eğitimi & doğruluk analizleri</li>
-        <li>✨ Kapsamlı risk projeksiyon çıktısı</li>
+        <li>Gelişmiş veri ön işleme (Data Preprocessing) & feature engineering</li>
+        <li>Karşılaştırmalı model eğitimi & doğruluk analizleri</li>
+        <li>Kapsamlı risk projeksiyon çıktısı</li>
       </ul>
       <p align="center">
         <a href="https://github.com/YusufBaranYildiz/ai-automation-risk-prediction">
@@ -157,7 +156,7 @@
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3 align="center">🎨 Deep Learning Stylist</h3>
+      <h3 align="center">Deep Learning Stylist</h3>
       <p align="center">
         <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
         <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
@@ -165,9 +164,9 @@
       </p>
       <p>Derin konvolüsyonel ağlar (CNN) ile çalışan, sanatsal görüntü analiz ve stil transferi (Neural Style Transfer) sistemi.</p>
       <ul>
-        <li>✨ Çok katmanlı özellik çıkarımı (Feature Extraction)</li>
-        <li>✨ Gram Matrix optimizasyonu ve latent uzay işlemleri</li>
-        <li>✨ Yüksek çözünürlüklü sanatsal stil sentezi</li>
+        <li>Çok katmanlı özellik çıkarımı (Feature Extraction)</li>
+        <li>Gram Matrix optimizasyonu ve latent uzay işlemleri</li>
+        <li>Yüksek çözünürlüklü sanatsal stil sentezi</li>
       </ul>
       <p align="center">
         <a href="https://github.com/YusufBaranYildiz/DeepLearningStylist">
@@ -178,7 +177,7 @@
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3 align="center">📊 AI Rep 2030</h3>
+      <h3 align="center">AI Rep 2030</h3>
       <p align="center">
         <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
         <img src="https://img.shields.io/badge/Jupyter-F37726?style=flat-square&logo=jupyter&logoColor=white" />
@@ -186,9 +185,9 @@
       </p>
       <p>Yapay zekânın 2030 vizyonu ve sektörler üzerindeki dönüştürücü etkisini analiz eden derinlemesine veri bilimi araştırması.</p>
       <ul>
-        <li>✨ İstatistiksel hipotez testleri ve zaman serisi trendleri</li>
-        <li>✨ İnteraktif veri görselleştirme panoları</li>
-        <li>✨ Geleceğe dönük analitik öngörüler</li>
+        <li>İstatistiksel hipotez testleri ve zaman serisi trendleri</li>
+        <li>İnteraktif veri görselleştirme panoları</li>
+        <li>Geleceğe dönük analitik öngörüler</li>
       </ul>
       <p align="center">
         <a href="https://github.com/YusufBaranYildiz/ai_rep2030">
@@ -197,7 +196,7 @@
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3 align="center">🌐 BAP Proje Yönetim Platformu</h3>
+      <h3 align="center">BAP Proje Yönetim Platformu</h3>
       <p align="center">
         <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
         <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
@@ -205,9 +204,9 @@
       </p>
       <p>Antalya Belek Üniversitesi için geliştirilen tam kapsamlı Bilimsel Araştırma Projeleri (BAP) süreç takip ve yönetim sistemi.</p>
       <ul>
-        <li>✨ Rol tabanlı yetkilendirme & dinamik başvuru onay akışları</li>
-        <li>✨ Modern responsive UI & ölçeklenebilir mimari</li>
-        <li>✨ Canlı proje durum ve bütçe raporlaması</li>
+        <li>Rol tabanlı yetkilendirme & dinamik başvuru onay akışları</li>
+        <li>Modern responsive UI & ölçeklenebilir mimari</li>
+        <li>Canlı proje durum ve bütçe raporlaması</li>
       </ul>
       <p align="center">
         <a href="https://github.com/YusufBaranYildiz/antalya-belek-proje-surec-yonetimi-v0.5">
@@ -220,27 +219,27 @@
 
 </div>
 
-<!-- 💫 NEON COMET DIVIDER -->
+<!-- NEON COMET DIVIDER -->
 <p align="center">
   <img src="assets/divider.svg" width="100%" alt="Divider"/>
 </p>
 
-<!-- ==================== 🎮 GAMIFIED ACTIVITY ==================== -->
-<h2 align="center">🎮 Canlı GitHub Etkileşimi &amp; Oyun</h2>
+<!-- ==================== GAMIFIED ACTIVITY ==================== -->
+<h2 align="center">Canlı GitHub Etkileşimi &amp; Oyun</h2>
 
 <!-- SPACE SHOOTER GAME -->
 <div align="center">
-  <p><i>👾 Günlük commit hareketlerimi simüle eden uzay arcade oyunu:</i></p>
+  <p><i>Günlük commit hareketlerimi simüle eden uzay arcade oyunu:</i></p>
   <img src="assets/game.gif" width="90%" alt="GitHub Space Shooter Game"/>
 </div>
 
-<!-- 💫 NEON COMET DIVIDER -->
+<!-- NEON COMET DIVIDER -->
 <p align="center">
   <img src="assets/divider.svg" width="100%" alt="Divider"/>
 </p>
 
-<!-- ==================== 📊 GITHUB STATS ==================== -->
-<h2 align="center">📊 Canlı GitHub İstatistikleri</h2>
+<!-- ==================== GITHUB STATS ==================== -->
+<h2 align="center">Canlı GitHub İstatistikleri</h2>
 
 <p align="center">
   <!-- STREAK STATS -->
@@ -260,29 +259,29 @@
   </a>
 </p>
 
-<!-- 💫 NEON COMET DIVIDER -->
+<!-- NEON COMET DIVIDER -->
 <p align="center">
   <img src="assets/divider.svg" width="100%" alt="Divider"/>
 </p>
 
-<!-- ==================== 📚 EDUCATION & CERTIFICATES ==================== -->
-<h2 align="center">📚 Eğitim &amp; Sertifikalar</h2>
+<!-- ==================== EDUCATION & CERTIFICATES ==================== -->
+<h2 align="center">Eğitim &amp; Sertifikalar</h2>
 
 <div align="center">
 
-### 🎓 Akademik Geçmiş
+### Akademik Geçmiş
 
 | Üniversite | Bölüm | Derece / Durum |
 |:---|:---|:---:|
-| **Antalya Belek Üniversitesi** | Yazılım Mühendisliği (Lisans) | 🎓 **Mezun (2026) · Tam Burslu** |
-| **Sakarya Uygulamalı Bilimler Üniversitesi** | Bilgisayar Destekli Tasarım (Ön Lisans) | ✅ **Tamamlandı** |
+| **Antalya Belek Üniversitesi** | Yazılım Mühendisliği (Lisans) | **Mezun (2026) · Tam Burslu** |
+| **Sakarya Uygulamalı Bilimler Üniversitesi** | Bilgisayar Destekli Tasarım (Ön Lisans) | **Tamamlandı** |
 
 <br/>
 
-### 🏅 Profesyonel Sertifikalar &amp; Bootcamp Programları
+### Profesyonel Sertifikalar &amp; Bootcamp Programları
 
 <details open>
-<summary><b>⭐ Tamamlanan Resmi Sertifikalar (Genişlet / Daralt)</b></summary>
+<summary><b>Tamamlanan Resmi Sertifikalar (Genişlet / Daralt)</b></summary>
 <br/>
 
 | Kurum | Sertifika / Eğitim Programı | Yıl |
@@ -300,36 +299,36 @@
 
 </div>
 
-<!-- 💫 NEON COMET DIVIDER -->
+<!-- NEON COMET DIVIDER -->
 <p align="center">
   <img src="assets/divider.svg" width="100%" alt="Divider"/>
 </p>
 
-<!-- ==================== 🎯 CURRENT GOALS ==================== -->
-<h2 align="center">🎯 Mevcut Hedefler &amp; Roadmap</h2>
+<!-- ==================== CURRENT GOALS ==================== -->
+<h2 align="center">Mevcut Hedefler &amp; Roadmap</h2>
 
 <div align="center">
 
 ```yaml
 Current Roadmap:
-  [✔] Yazılım Mühendisliği lisansını başarıyla tamamlama (2026)
-  [✔] Yapay Zekâ & Yazılım staj deneyimi kazanma (AIOR Teknoloji)
-  [✔] Hackathon & Yarışmalarda derece elde etme (KPMG Finalist, Anadolu Hackathon 7.)
-  [⚡] Derin Öğrenme & Vision modellerini optimize etme
-  [⚡] Çok ajanlı (Multi-Agent) AI sistemleri ve otomasyon mimarileri
-  [⚡] Açık kaynak kodlu (Open-Source) ML ekosistemine düzenli katkı
-  [🎯] AI / Machine Learning Engineer olarak global veya öncü projelere katılma
+  [x] Yazılım Mühendisliği lisansını başarıyla tamamlama (2026)
+  [x] Yapay Zekâ & Yazılım staj deneyimi kazanma (AIOR Teknoloji)
+  [x] Hackathon & Yarışmalarda derece elde etme (KPMG Finalist, Anadolu Hackathon 7.)
+  [-] Derin Öğrenme & Vision modellerini optimize etme
+  [-] Çok ajanlı (Multi-Agent) AI sistemleri ve otomasyon mimarileri
+  [-] Açık kaynak kodlu (Open-Source) ML ekosistemine düzenli katkı
+  [>] AI / Machine Learning Engineer olarak global veya öncü projelere katılma
 ```
 
 </div>
 
-<!-- 💫 NEON COMET DIVIDER -->
+<!-- NEON COMET DIVIDER -->
 <p align="center">
   <img src="assets/divider.svg" width="100%" alt="Divider"/>
 </p>
 
-<!-- ==================== 💬 CONTACT ==================== -->
-<h2 align="center">💬 Benimle İletişime Geçin</h2>
+<!-- ==================== CONTACT ==================== -->
+<h2 align="center">Benimle İletişime Geçin</h2>
 
 <p align="center">
   <a href="mailto:yusufbarany1@gmail.com">
@@ -343,12 +342,12 @@ Current Roadmap:
   </a>
 </p>
 
-<!-- 💫 NEON COMET DIVIDER -->
+<!-- NEON COMET DIVIDER -->
 <p align="center">
   <img src="assets/divider.svg" width="100%" alt="Divider"/>
 </p>
 
-<!-- 📊 PROFILE VIEWS & FOOTER -->
+<!-- PROFILE VIEWS & FOOTER -->
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=YusufBaranYildiz&color=00D9FF&style=for-the-badge" alt="Profile Views"/>
 </p>
@@ -358,6 +357,6 @@ Current Roadmap:
 </p>
 
 <p align="center">
-  <strong>⭐ Projelerim ilginizi çektiyse bir Star bırakmayı unutmayın!</strong><br/>
-  <em>Designed &amp; Engineered with ❤️ by <b>Yusuf Baran YILDIZ</b></em>
+  <strong>Projelerim ilginizi çektiyse bir Star bırakabilirsiniz!</strong><br/>
+  <em>Designed &amp; Engineered by <b>Yusuf Baran YILDIZ</b></em>
 </p>
