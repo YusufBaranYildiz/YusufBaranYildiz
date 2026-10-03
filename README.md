@@ -129,18 +129,6 @@
   <img src="assets/divider.svg" width="100%" alt="Divider"/>
 </p>
 
-<!-- ==================== ⚡ SYSTEM METRICS ==================== -->
-<h2 align="center">⚡ Yetkinlik &amp; Model Metrikleri</h2>
-
-<!-- 📊 ANIMATED SKILL PROGRESS BARS -->
-<p align="center">
-  <img src="assets/skills_progress.svg" width="100%" alt="Yetkinlik Metrikleri Animasyonlu HUD"/>
-</p>
-
-<!-- 💫 NEON COMET DIVIDER -->
-<p align="center">
-  <img src="assets/divider.svg" width="100%" alt="Divider"/>
-</p>
 
 <!-- ==================== ⭐ FEATURED PROJECTS ==================== -->
 <h2 align="center">⭐ Öne Çıkan Projeler</h2>
