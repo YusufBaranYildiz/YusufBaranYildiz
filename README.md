@@ -10,7 +10,7 @@
 <!-- DYNAMIC TYPEWRITER TITLE -->
 <p align="center">
   <a href="https://github.com/YusufBaranYildiz">
-    <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=24&duration=2800&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&width=780&height=95&lines=Software+Engineer+%7C+Antalya+Belek+University+2026;AI+%26+Deep+Learning+Developer;PyTorch+%E2%80%A2+TensorFlow+%E2%80%A2+Computer+Vision+%E2%80%A2+AI+Agents;KPMG+Olympics+Finalist;Anadolu+Hackathon+7th+Place;Building+Next-Gen+Intelligent+Autonomous+Systems" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=24&duration=2800&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&width=800&height=95&lines=Software+Engineer+%7C+Antalya+Belek+University+2026;AI+%26+Deep+Learning+Developer;Multi-Agent+Systems+%E2%80%A2+LLM+Integration+%E2%80%A2+Llama3;KPMG+Olympics+Finalist;Anadolu+Hackathon+7th+Place;Building+Agentic+SaaS+%26+Industrial+AI+Platforms" alt="Typing SVG" />
   </a>
 </p>
 
@@ -39,17 +39,18 @@
 <h2 align="center">Hakkımda</h2>
 
 <p align="center">
-  Merhaba! 2026 yılında <b>Antalya Belek Üniversitesi Yazılım Mühendisliği</b> bölümünden tam burslu olarak mezun oldum.<br/>
-  <b>Yapay Zekâ, Derin Öğrenme (Deep Learning) ve Makine Öğrenmesi</b> ekosistemine odaklanıyorum.<br/>
-  Büyük ölçekli veri analitiği, bilgisayarlı görü (Computer Vision), otonom AI ajanları ve gerçek dünya problemlerini çözen sistemler geliştiriyorum.
+  Antalya Belek Üniversitesi <b>Yazılım Mühendisliği</b> bölümünden tam burslu olarak mezun oldum.<br/>
+  Yapay zekâ, makine öğrenmesi ve derin öğrenme alanlarında pratik proje deneyimiyle; <b>çok ajanlı (multi-agent) sistemler, LLM entegrasyonu ve agentic ERP mimarileri</b> üzerine odaklanıyorum.<br/>
+  Analitik düşünce yapısıyla teorik modelleri uçtan uca çalışan, ölçeklenebilir ve güvenli kurumsal çözümlere dönüştürüyorum.
 </p>
 
 <p align="center">
-  <b>Antalya Belek Üniversitesi</b> — Yazılım Mühendisliği (Tam Burslu, 2026 Mezunu)<br/>
-  <b>AIOR Teknoloji</b> — Stajyer (AI / ML & Yazılım Geliştirme)<br/>
-  <b>KPMG Olympics</b> Finalisti &nbsp;·&nbsp; <b>Anadolu Hackathon</b> 7.'si<br/>
-  <b>Odak Alanları:</b> Deep Learning · Computer Vision · Predictive Analytics · Autonomous AI Agents<br/>
-  <b>Kariyer Hedefi:</b> <i>AI Engineer / Machine Learning Specialist</i>
+  <b>Antalya Belek Üniversitesi</b> — Yazılım Mühendisliği (Lisans, Tam Burslu, 2023–2026)<br/>
+  <b>Sakarya Uygulamalı Bilimler Üniversitesi</b> — Bilgisayar Destekli Tasarım ve Animasyon (Ön Lisans, 2021–2023)<br/>
+  <b>AIOR Teknoloji</b> — Stajyer Yazılım Geliştirici (Agentic ERP SaaS & Endüstriyel AI Sistemleri, 2026)<br/>
+  <b>KPMG IxT Olimpiyatları</b> Finalisti (40 Kişilik Türkiye Finali) &nbsp;·&nbsp; <b>Anadolu Hackathon</b> 7.'si (WeatherWise)<br/>
+  <b>Odak Alanları:</b> Multi-Agent Systems · LLM Integration · Deep Learning · Computer Vision · Industrial AI<br/>
+  <b>Hedef:</b> <i>AI Engineer / Machine Learning Specialist</i>
 </p>
 
 <!-- ANIMATED PYTHON REPL TERMINAL -->
@@ -75,7 +76,7 @@
 </p>
 
 <!-- ==================== TECH STACK ==================== -->
-<h2 align="center">Tech Stack &amp; Teknolojiler</h2>
+<h2 align="center">Tech Stack &amp; Beceriler</h2>
 
 <!-- DUAL-ROW INFINITE ROTATING CAROUSEL -->
 <p align="center">
@@ -84,40 +85,49 @@
 
 <!-- FLOATING TECH ICONS -->
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,scikitlearn,opencv,cpp,typescript,javascript,react,fastapi,nodejs,docker,git,github,linux,vscode&perline=8&theme=dark" alt="Tech Stack Icons"/>
+  <img src="https://skillicons.dev/icons?i=python,cs,cpp,typescript,javascript,react,fastapi,dotnet,postgres,docker,git,github,linux,vscode&perline=7&theme=dark" alt="Tech Stack Icons"/>
 </p>
 
 <!-- TECH BADGES GRID -->
 <div align="center">
 
-<table>
+<table width="100%">
   <tr>
-    <td align="center" width="33%"><b>AI &amp; Machine Learning</b></td>
-    <td align="center" width="33%"><b>Programlama Dilleri</b></td>
-    <td align="center" width="33%"><b>Web, Cloud &amp; Araçlar</b></td>
+    <td align="center" width="25%"><b>Yapay Zekâ &amp; LLM</b></td>
+    <td align="center" width="25%"><b>Programlama Dilleri</b></td>
+    <td align="center" width="25%"><b>Web Geliştirme</b></td>
+    <td align="center" width="25%"><b>Veritabanı &amp; Güvenlik</b></td>
   </tr>
   <tr>
-    <td>
-      <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
+    <td valign="top">
+      <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=chainlink&logoColor=white" /><br/>
+      <img src="https://img.shields.io/badge/Llama3-0467DF?style=flat-square&logo=meta&logoColor=white" /><br/>
+      <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" /><br/>
       <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" /><br/>
+      <img src="https://img.shields.io/badge/Docling-00D9FF?style=flat-square" /><br/>
+      <img src="https://img.shields.io/badge/Replicate-000000?style=flat-square" /><br/>
       <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" />
-      <img src="https://img.shields.io/badge/Keras-D00000?style=flat-square&logo=keras&logoColor=white" /><br/>
-      <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" />
-      <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" /><br/>
-      <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" />
-      <img src="https://img.shields.io/badge/Jupyter-F37726?style=flat-square&logo=jupyter&logoColor=white" />
     </td>
-    <td>
+    <td valign="top">
       <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" /><br/>
-      <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" /><br/>
+      <img src="https://img.shields.io/badge/C%23-239120?style=flat-square&logo=c-sharp&logoColor=white" /><br/>
+      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" /><br/>
       <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" /><br/>
-      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
+      <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" />
     </td>
-    <td>
+    <td valign="top">
+      <img src="https://img.shields.io/badge/ASP.NET%20Core%208-512BD4?style=flat-square&logo=dotnet&logoColor=white" /><br/>
       <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" /><br/>
       <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" /><br/>
-      <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white" /><br/>
-      <img src="https://img.shields.io/badge/Git%20%26%20GitHub-181717?style=flat-square&logo=github&logoColor=white" />
+      <img src="https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=three.js&logoColor=white" /><br/>
+      <img src="https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=greensock&logoColor=black" />
+    </td>
+    <td valign="top">
+      <img src="https://img.shields.io/badge/PostgreSQL%20(Neon)-4169E1?style=flat-square&logo=postgresql&logoColor=white" /><br/>
+      <img src="https://img.shields.io/badge/Row--Level%20Security-00D9FF?style=flat-square" /><br/>
+      <img src="https://img.shields.io/badge/JWT%20%26%20RBAC-FF6B9D?style=flat-square" /><br/>
+      <img src="https://img.shields.io/badge/Git%20%26%20GitHub-181717?style=flat-square&logo=github&logoColor=white" /><br/>
+      <img src="https://img.shields.io/badge/UML%20%26%20Mermaid-FF3670?style=flat-square&logo=mermaid&logoColor=white" />
     </td>
   </tr>
 </table>
@@ -137,39 +147,41 @@
 <table width="100%">
   <tr>
     <td width="50%" valign="top">
-      <h3 align="center">AI Otomasyon Risk Tahmin Sistemi</h3>
+      <h3 align="center">Orbital Shield</h3>
       <p align="center">
         <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-        <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" />
-        <img src="https://img.shields.io/badge/ML%20Model-00D9FF?style=flat-square" />
+        <img src="https://img.shields.io/badge/Multi--Agent-00D9FF?style=flat-square" />
+        <img src="https://img.shields.io/badge/NASA%20API-E03C31?style=flat-square&logo=nasa&logoColor=white" />
+        <img src="https://img.shields.io/badge/Kaggle%20Capstone-20BEFF?style=flat-square&logo=kaggle&logoColor=white" />
       </p>
-      <p>Gerçek dünya iş gücü verilerini işleyerek sektör bazlı otomasyon riskini tahmin eden gelişmiş makine öğrenmesi modeli.</p>
+      <p>NASA NeoWs API tabanlı, çok ajanlı (multi-agent) otonom uzay tehdidi izleme ve erken uyarı sistemi. Kaggle AI Agents Intensive Capstone projesi.</p>
       <ul>
-        <li>Gelişmiş veri ön işleme (Data Preprocessing) & feature engineering</li>
-        <li>Karşılaştırmalı model eğitimi & doğruluk analizleri</li>
-        <li>Kapsamlı risk projeksiyon çıktısı</li>
+        <li>Otonom veri toplama, risk analizi ve tehdit değerlendirme ajanları</li>
+        <li>Retro-fütüristik HTML/CSS/JS canlı takip paneli (dashboard)</li>
+        <li>Gerçek zamanlı yakın Dünya nesneleri (NEO) yörünge analizi</li>
       </ul>
       <p align="center">
-        <a href="https://github.com/YusufBaranYildiz/ai-automation-risk-prediction">
+        <a href="https://github.com/YusufBaranYildiz">
           <img src="https://img.shields.io/badge/GitHub-Repository%20%E2%86%92-00D9FF?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1B24" alt="Repo"/>
         </a>
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3 align="center">Deep Learning Stylist</h3>
+      <h3 align="center">WeatherWise</h3>
       <p align="center">
-        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-        <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
-        <img src="https://img.shields.io/badge/CNN%20%26%20Vision-FF6B9D?style=flat-square" />
+        <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" />
+        <img src="https://img.shields.io/badge/Llama3-0467DF?style=flat-square&logo=meta&logoColor=white" />
+        <img src="https://img.shields.io/badge/Telegram%20Bot-24A1DE?style=flat-square&logo=telegram&logoColor=white" />
+        <img src="https://img.shields.io/badge/Hackathon-7.Sıra-FF6B9D?style=flat-square" />
       </p>
-      <p>Derin konvolüsyonel ağlar (CNN) ile çalışan, sanatsal görüntü analiz ve stil transferi (Neural Style Transfer) sistemi.</p>
+      <p>Sivas Üniversitesi Anadolu Hackathon'da kendi alanında 7. olan, yerel Llama3 modeli ve Telegram bot entegrasyonlu hava verisi karar destek sistemi.</p>
       <ul>
-        <li>Çok katmanlı özellik çıkarımı (Feature Extraction)</li>
-        <li>Gram Matrix optimizasyonu ve latent uzay işlemleri</li>
-        <li>Yüksek çözünürlüklü sanatsal stil sentezi</li>
+        <li>FastAPI arka ucu ve yerel LLM tabanlı karar destek motoru</li>
+        <li>HTML5 Canvas parçacık (particle) efektleriyle animasyonlu arayüz</li>
+        <li>Telegram botu üzerinden anlık sorgulama ve öneri akışı</li>
       </ul>
       <p align="center">
-        <a href="https://github.com/YusufBaranYildiz/DeepLearningStylist">
+        <a href="https://github.com/YusufBaranYildiz">
           <img src="https://img.shields.io/badge/GitHub-Repository%20%E2%86%92-FF6B9D?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1B24" alt="Repo"/>
         </a>
       </p>
@@ -177,40 +189,82 @@
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3 align="center">AI Rep 2030</h3>
+      <h3 align="center">BAP Süreç Yönetim Platformu</h3>
       <p align="center">
-        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-        <img src="https://img.shields.io/badge/Jupyter-F37726?style=flat-square&logo=jupyter&logoColor=white" />
-        <img src="https://img.shields.io/badge/Data%20Science-10B981?style=flat-square" />
-      </p>
-      <p>Yapay zekânın 2030 vizyonu ve sektörler üzerindeki dönüştürücü etkisini analiz eden derinlemesine veri bilimi araştırması.</p>
-      <ul>
-        <li>İstatistiksel hipotez testleri ve zaman serisi trendleri</li>
-        <li>İnteraktif veri görselleştirme panoları</li>
-        <li>Geleceğe dönük analitik öngörüler</li>
-      </ul>
-      <p align="center">
-        <a href="https://github.com/YusufBaranYildiz/ai_rep2030">
-          <img src="https://img.shields.io/badge/GitHub-Repository%20%E2%86%92-10B981?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1B24" alt="Repo"/>
-        </a>
-      </p>
-    </td>
-    <td width="50%" valign="top">
-      <h3 align="center">BAP Proje Yönetim Platformu</h3>
-      <p align="center">
-        <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+        <img src="https://img.shields.io/badge/ASP.NET%20Core%208-512BD4?style=flat-square&logo=dotnet&logoColor=white" />
         <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
-        <img src="https://img.shields.io/badge/Mezuniyet-Projesi-FF6B9D?style=flat-square" />
+        <img src="https://img.shields.io/badge/PostgreSQL%20RLS-4169E1?style=flat-square&logo=postgresql&logoColor=white" />
+        <img src="https://img.shields.io/badge/Bitirme%20Tezi-2026-00D9FF?style=flat-square" />
       </p>
-      <p>Antalya Belek Üniversitesi için geliştirilen tam kapsamlı Bilimsel Araştırma Projeleri (BAP) süreç takip ve yönetim sistemi.</p>
+      <p>Antalya Belek Üniversitesi için geliştirilen, çok şemalı (multi-schema) ve Row-Level Security (RLS) güvenlikli tam kapsamlı Bilimsel Araştırma Projeleri yönetim sistemi.</p>
       <ul>
-        <li>Rol tabanlı yetkilendirme & dinamik başvuru onay akışları</li>
-        <li>Modern responsive UI & ölçeklenebilir mimari</li>
-        <li>Canlı proje durum ve bütçe raporlaması</li>
+        <li>ASP.NET Core/.NET 8, React ve Neon PostgreSQL mimarisi</li>
+        <li>JWT tabanlı rol yetkilendirmesi (RBAC) ve dinamik onay akışları</li>
+        <li>Mermaid ve UML sınıf/ER diyagramları ile sistem modellemesi</li>
       </ul>
       <p align="center">
         <a href="https://github.com/YusufBaranYildiz/antalya-belek-proje-surec-yonetimi-v0.5">
           <img src="https://img.shields.io/badge/GitHub-Repository%20%E2%86%92-00D9FF?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1B24" alt="Repo"/>
+        </a>
+      </p>
+    </td>
+    <td width="50%" valign="top">
+      <h3 align="center">IBM Granite 4.0 Doküman Özetleme</h3>
+      <p align="center">
+        <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=chainlink&logoColor=white" />
+        <img src="https://img.shields.io/badge/IBM%20Granite-052FAD?style=flat-square&logo=ibm&logoColor=white" />
+        <img src="https://img.shields.io/badge/Docling-00D9FF?style=flat-square" />
+        <img src="https://img.shields.io/badge/Replicate-000000?style=flat-square" />
+      </p>
+      <p>LangChain, Docling ve Replicate entegrasyonuyla Project Gutenberg büyük edebi metinleri üzerinde çalışan akıllı doküman özetleme sistemi.</p>
+      <ul>
+        <li>Docling ile yapılandırılmış doküman parsing ve chunking</li>
+        <li>IBM Granite 4.0 LLM ile bağlamsal ve hiyerarşik özetleme</li>
+        <li>Geniş metin hacimlerinde optimize edilmiş prompt mühendisliği</li>
+      </ul>
+      <p align="center">
+        <a href="https://github.com/YusufBaranYildiz">
+          <img src="https://img.shields.io/badge/GitHub-Repository%20%E2%86%92-052FAD?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1B24" alt="Repo"/>
+        </a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3 align="center">kamerakontrol.com</h3>
+      <p align="center">
+        <img src="https://img.shields.io/badge/AIOR%20Teknoloji-Staj-00D9FF?style=flat-square" />
+        <img src="https://img.shields.io/badge/Computer%20Vision-5C3EE8?style=flat-square&logo=opencv&logoColor=white" />
+        <img src="https://img.shields.io/badge/Industrial%20AI-FF6B9D?style=flat-square" />
+      </p>
+      <p>AIOR Teknoloji bünyesinde geliştirilen; endüstriyel kalite kontrol, yangın algılama, plaka tanıma ve tekstil muayene sistemlerini sunan kurumsal AI platformu.</p>
+      <ul>
+        <li>Görüntü işleme tabanlı endüstriyel hata ve anomali tespiti</li>
+        <li>Ürün özellikleri, teknik blog ve kurumsal vitrin mimarisi</li>
+        <li>Canlıya alınmış ölçeklenebilir web altyapısı</li>
+      </ul>
+      <p align="center">
+        <a href="https://github.com/YusufBaranYildiz">
+          <img src="https://img.shields.io/badge/GitHub-Repository%20%E2%86%92-00D9FF?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1B24" alt="Repo"/>
+        </a>
+      </p>
+    </td>
+    <td width="50%" valign="top">
+      <h3 align="center">KPMG IxT Olimpiyatları Vaka Çalışması</h3>
+      <p align="center">
+        <img src="https://img.shields.io/badge/KPMG%20Finalist-2026-FF6B9D?style=flat-square" />
+        <img src="https://img.shields.io/badge/Data%20Science-00D9FF?style=flat-square" />
+        <img src="https://img.shields.io/badge/Financial%20AI-10B981?style=flat-square" />
+      </p>
+      <p>Türkiye genelinde üç aşamalı zorlu elemeyi geçerek 40 kişilik finale yükselinen, KPMG yöneticilerine sunulan veri bilimi ve yatırım tavsiyesi projesi.</p>
+      <ul>
+        <li>Makroekonomik belirsizlik analizi ve zaman serisi modellemesi</li>
+        <li>Yatırım fonu portföy optimizasyonu ve risk projeksiyonu</li>
+        <li>Üst düzey karar alıcılara yönelik analitik vaka sunumu</li>
+      </ul>
+      <p align="center">
+        <a href="https://github.com/YusufBaranYildiz">
+          <img src="https://img.shields.io/badge/GitHub-Profile%20%E2%86%92-FF6B9D?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1B24" alt="Repo"/>
         </a>
       </p>
     </td>
@@ -271,10 +325,10 @@
 
 ### Akademik Geçmiş
 
-| Üniversite | Bölüm | Derece / Durum |
+| Kurum | Program | Derece / Durum |
 |:---|:---|:---:|
 | **Antalya Belek Üniversitesi** | Yazılım Mühendisliği (Lisans) | **Mezun (2026) · Tam Burslu** |
-| **Sakarya Uygulamalı Bilimler Üniversitesi** | Bilgisayar Destekli Tasarım (Ön Lisans) | **Tamamlandı** |
+| **Sakarya Uygulamalı Bilimler Üniversitesi** | Bilgisayar Destekli Tasarım ve Animasyon (Ön Lisans) | **Tamamlandı (2021–2023)** |
 
 <br/>
 
@@ -287,13 +341,18 @@
 | Kurum | Sertifika / Eğitim Programı | Yıl |
 |:---|:---|:---:|
 | **CISCO & IBM SkillsBuild** | AI Fundamentals with IBM SkillsBuild | 2025 |
-| **CISCO Networking Academy** | Data Science Essentials With Python | 2026 |
-| **İstanbul Büyükşehir Belediyesi** | Deep Learning Atölyesi | 2025 |
-| **GARANTİ BBVA** | Makine Öğrenmesi Programı | 2025 |
-| **GARANTİ BBVA** | Generative AI Teknoloji Serisi | 2025 |
-| **İstanbul Büyükşehir Belediyesi** | Makine Öğrenmesi Bootcamp | 2026 |
-| **BTK AKADEMİ** | Python Programlama for AI | 2024 |
-| **BTK AKADEMİ** | AI ve Algoritmalarına Giriş | 2025 |
+| **CISCO Networking Academy** | Data Science Essentials with Python | 2026 |
+| **IBM & Kodluyoruz** | AI4Future — İleri Seviye | 2026 |
+| **IBM** | Craft Precise Prompts for AI Models | 2026 |
+| **İstanbul Büyükşehir TECH İstanbul** | Makine Öğrenmesi Bootcamp Atölyesi | 2026 |
+| **İstanbul Büyükşehir TECH İstanbul** | Deep Learning Atölyesi | 2025 |
+| **Garanti BBVA Yeni Nesil Kariyer Okulu** | Temel Makine Öğrenmesi | 2025 |
+| **Garanti BBVA Yeni Nesil Kariyer Okulu** | Teknoloji Serisi: Gen AI | 2025 |
+| **Garanti BBVA GENÇ** | Kariyerime İlk Adım Programı | 2025 |
+| **SOCAR Türkiye** | Next Gen Academy | 2026 |
+| **Coderspace** | Veri Bilimi ve Yapay Zeka Yaz Okulu | 2025 |
+| **Veri Analizi Okulu** | Yapay Zekâ ve Makine Öğrenmesi Başarı Belgesi | 2026 |
+| **Veri Analizi Okulu** | Yapay Zekâ ve Kolaylaştırıcı Araçlar Başarı Belgesi | 2026 |
 
 </details>
 
@@ -311,13 +370,13 @@
 
 ```yaml
 Current Roadmap:
-  [x] Yazılım Mühendisliği lisansını başarıyla tamamlama (2026)
-  [x] Yapay Zekâ & Yazılım staj deneyimi kazanma (AIOR Teknoloji)
-  [x] Hackathon & Yarışmalarda derece elde etme (KPMG Finalist, Anadolu Hackathon 7.)
-  [-] Derin Öğrenme & Vision modellerini optimize etme
-  [-] Çok ajanlı (Multi-Agent) AI sistemleri ve otomasyon mimarileri
-  [-] Açık kaynak kodlu (Open-Source) ML ekosistemine düzenli katkı
-  [>] AI / Machine Learning Engineer olarak global veya öncü projelere katılma
+  [x] Yazılım Mühendisliği lisansını başarıyla tamamlama (Tam Burslu, 2026)
+  [x] Agentic B2B SaaS ve ERP staj deneyimi (AIOR Teknoloji)
+  [x] Ulusal hackathon ve veri bilimi finalleri (KPMG Finalist, Anadolu Hackathon 7.)
+  [-] Çok ajanlı (Multi-Agent) otonom AI sistemleri geliştirme ve optimizasyon
+  [-] LLM orkestrasyonu (LangChain, Llama3, Docling) ve kurumsal entegrasyonlar
+  [-] Açık kaynak kodlu (Open-Source) yapay zekâ ekosistemine düzenli katkı
+  [>] AI / Machine Learning Engineer olarak yenilikçi kurumsal projelere değer katma
 ```
 
 </div>
