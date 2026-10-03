@@ -14,21 +14,31 @@
   </a>
 </p>
 
-<!-- HIGHLIGHT BADGES -->
+<!-- HIGHLIGHT BADGES & QUICK ACTIONS -->
+<p align="center">
+  <a href="https://raw.githubusercontent.com/YusufBaranYildiz/YusufBaranYildiz/main/Yusuf_Baran_Yildiz_CV.pdf" target="_blank">
+    <img src="https://img.shields.io/badge/%C3%96zge%C3%A7mi%C5%9F-CV%20%C4%B0ndir%20(PDF)-FF6B9D?style=for-the-badge&logo=adobeacrobatreader&logoColor=white&labelColor=0D1B24" alt="CV İndir (PDF)"/>
+  </a>
+  <a href="https://komarev.com/ghpvc/?username=YusufBaranYildiz">
+    <img src="https://komarev.com/ghpvc/?username=YusufBaranYildiz&color=00D9FF&style=for-the-badge&label=Profil%20Ziyaret%C3%A7isi" alt="Ziyaretçi Sayacı"/>
+  </a>
+  <a href="https://yusufbaranyildiz.github.io/YusufBaranYildiz/" target="_blank">
+    <img src="https://img.shields.io/badge/%C4%B0nteraktif%20Web%20Portfolyosu-Canl%C4%B1%203D%20Deneyim%20%E2%86%92-00D9FF?style=for-the-badge&logo=three.js&logoColor=white&labelColor=0D1B24" alt="İnteraktif Web Portfolyosu"/>
+  </a>
+</p>
+
 <p align="center">
   <a href="https://github.com/YusufBaranYildiz">
-    <img src="https://img.shields.io/badge/Yaz%C4%B1l%C4%B1m%20M%C3%BChendisi-Mezun%202026-00D9FF?style=for-the-badge&logo=codeforces&logoColor=white&labelColor=0D1B24" alt="Yazılım Mühendisi - Mezun 2026"/>
+    <img src="https://img.shields.io/badge/Yaz%C4%B1l%C4%B1m%20M%C3%BChendisi-Mezun%202026-00D9FF?style=flat-square&logo=codeforces&logoColor=white&labelColor=0D1B24" alt="Yazılım Mühendisi - Mezun 2026"/>
   </a>
-  <a href="#başarılar--yarışmalar">
-    <img src="https://img.shields.io/badge/KPMG%20Olympics-Finalist-FF6B9D?style=for-the-badge&logo=target&logoColor=white&labelColor=0D1B24" alt="KPMG Olympics Finalist"/>
+  <a href="#ba%C5%9Far%C4%B1lar--yar%C4%B1%C5%9Fmalar">
+    <img src="https://img.shields.io/badge/KPMG%20Olympics-Finalist-FF6B9D?style=flat-square&logo=target&logoColor=white&labelColor=0D1B24" alt="KPMG Olympics Finalist"/>
   </a>
-  <a href="#başarılar--yarışmalar">
-    <img src="https://img.shields.io/badge/Anadolu%20Hackathon-7th%20Place-00D9FF?style=for-the-badge&logo=codeforces&logoColor=white&labelColor=0D1B24" alt="Anadolu Hackathon 7th Place"/>
+  <a href="#ba%C5%9Far%C4%B1lar--yar%C4%B1%C5%9Fmalar">
+    <img src="https://img.shields.io/badge/Anadolu%20Hackathon-7th%20Place-00D9FF?style=flat-square&logo=codeforces&logoColor=white&labelColor=0D1B24" alt="Anadolu Hackathon 7th Place"/>
   </a>
-  <a href="#benimle-iletişime-geçin">
-    <img src="https://img.shields.io/badge/Status-Open%20To%20Work-10B981?style=for-the-badge&labelColor=0D1B24" alt="Status"/>
-  <a href="https://yusufbaranyildiz.github.io/YusufBaranYildiz/" target="_blank">
-    <img src="https://img.shields.io/badge/%C4%B0nteraktif%203D%20Portfolyo-%C4%B0mle%C3%A7%20Takipli%20Par%C3%A7ac%C4%B1k%20Deneyimi%20%E2%86%92-00D9FF?style=for-the-badge&logo=three.js&logoColor=white&labelColor=0D1B24" alt="İnteraktif Deneyim"/>
+  <a href="#benimle-ileti%C5%9Fime-ge%C3%A7in">
+    <img src="https://img.shields.io/badge/Status-Open%20To%20Work-10B981?style=flat-square&labelColor=0D1B24" alt="Status"/>
   </a>
 </p>
 
@@ -157,11 +167,17 @@
         <img src="https://img.shields.io/badge/Kaggle%20Capstone-20BEFF?style=flat-square&logo=kaggle&logoColor=white" />
       </p>
       <p>NASA NeoWs API tabanlı, çok ajanlı (multi-agent) otonom uzay tehdidi izleme ve erken uyarı sistemi. Kaggle AI Agents Intensive Capstone projesi.</p>
-      <ul>
-        <li>Otonom veri toplama, risk analizi ve tehdit değerlendirme ajanları</li>
-        <li>Retro-fütüristik HTML/CSS/JS canlı takip paneli (dashboard)</li>
-        <li>Gerçek zamanlı yakın Dünya nesneleri (NEO) yörünge analizi</li>
-      </ul>
+      <details>
+        <summary><b>Sistem Mimarisi &amp; Detaylar ▾</b></summary>
+        <br/>
+        <ul>
+          <li>Otonom veri toplama, risk analizi ve tehdit değerlendirme ajanları</li>
+          <li>Retro-fütüristik HTML/CSS/JS canlı takip paneli (dashboard)</li>
+          <li>Gerçek zamanlı yakın Dünya nesneleri (NEO) yörünge analizi</li>
+          <li>Asenkron veri akışı ve otomatik uyarı mekanizması</li>
+        </ul>
+      </details>
+      <br/>
       <p align="center">
         <a href="https://github.com/YusufBaranYildiz">
           <img src="https://img.shields.io/badge/GitHub-Repository%20%E2%86%92-00D9FF?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1B24" alt="Repo"/>
@@ -174,14 +190,20 @@
         <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" />
         <img src="https://img.shields.io/badge/Llama3-0467DF?style=flat-square&logo=meta&logoColor=white" />
         <img src="https://img.shields.io/badge/Telegram%20Bot-24A1DE?style=flat-square&logo=telegram&logoColor=white" />
-        <img src="https://img.shields.io/badge/Hackathon-7.Sıra-FF6B9D?style=flat-square" />
+        <img src="https://img.shields.io/badge/Hackathon-7.S%C4%B1ra-FF6B9D?style=flat-square" />
       </p>
       <p>Sivas Üniversitesi Anadolu Hackathon'da kendi alanında 7. olan, yerel Llama3 modeli ve Telegram bot entegrasyonlu hava verisi karar destek sistemi.</p>
-      <ul>
-        <li>FastAPI arka ucu ve yerel LLM tabanlı karar destek motoru</li>
-        <li>HTML5 Canvas parçacık (particle) efektleriyle animasyonlu arayüz</li>
-        <li>Telegram botu üzerinden anlık sorgulama ve öneri akışı</li>
-      </ul>
+      <details>
+        <summary><b>Sistem Mimarisi &amp; Detaylar ▾</b></summary>
+        <br/>
+        <ul>
+          <li>FastAPI arka ucu ve yerel LLM tabanlı karar destek motoru</li>
+          <li>HTML5 Canvas parçacık (particle) efektleriyle animasyonlu arayüz</li>
+          <li>Telegram botu üzerinden anlık sorgulama ve öneri akışı</li>
+          <li>Hava parametrelerine göre kıyafet/aktivite tavsiye algoritması</li>
+        </ul>
+      </details>
+      <br/>
       <p align="center">
         <a href="https://github.com/YusufBaranYildiz">
           <img src="https://img.shields.io/badge/GitHub-Repository%20%E2%86%92-FF6B9D?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1B24" alt="Repo"/>
@@ -199,11 +221,17 @@
         <img src="https://img.shields.io/badge/Bitirme%20Tezi-2026-00D9FF?style=flat-square" />
       </p>
       <p>Antalya Belek Üniversitesi için geliştirilen, çok şemalı (multi-schema) ve Row-Level Security (RLS) güvenlikli tam kapsamlı Bilimsel Araştırma Projeleri yönetim sistemi.</p>
-      <ul>
-        <li>ASP.NET Core/.NET 8, React ve Neon PostgreSQL mimarisi</li>
-        <li>JWT tabanlı rol yetkilendirmesi (RBAC) ve dinamik onay akışları</li>
-        <li>Mermaid ve UML sınıf/ER diyagramları ile sistem modellemesi</li>
-      </ul>
+      <details>
+        <summary><b>Sistem Mimarisi &amp; Detaylar ▾</b></summary>
+        <br/>
+        <ul>
+          <li>ASP.NET Core/.NET 8, React ve Neon PostgreSQL mimarisi</li>
+          <li>JWT tabanlı rol yetkilendirmesi (RBAC) ve dinamik onay akışları</li>
+          <li>Mermaid ve UML sınıf/ER diyagramları ile sistem modellemesi</li>
+          <li>Kurumsal bütçe takibi ve çok aşamalı hakem değerlendirme modülü</li>
+        </ul>
+      </details>
+      <br/>
       <p align="center">
         <a href="https://github.com/YusufBaranYildiz/antalya-belek-proje-surec-yonetimi-v0.5">
           <img src="https://img.shields.io/badge/GitHub-Repository%20%E2%86%92-00D9FF?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1B24" alt="Repo"/>
@@ -219,11 +247,17 @@
         <img src="https://img.shields.io/badge/Replicate-000000?style=flat-square" />
       </p>
       <p>LangChain, Docling ve Replicate entegrasyonuyla Project Gutenberg büyük edebi metinleri üzerinde çalışan akıllı doküman özetleme sistemi.</p>
-      <ul>
-        <li>Docling ile yapılandırılmış doküman parsing ve chunking</li>
-        <li>IBM Granite 4.0 LLM ile bağlamsal ve hiyerarşik özetleme</li>
-        <li>Geniş metin hacimlerinde optimize edilmiş prompt mühendisliği</li>
-      </ul>
+      <details>
+        <summary><b>Sistem Mimarisi &amp; Detaylar ▾</b></summary>
+        <br/>
+        <ul>
+          <li>Docling ile yapılandırılmış doküman parsing ve chunking</li>
+          <li>IBM Granite 4.0 LLM ile bağlamsal ve hiyerarşik özetleme</li>
+          <li>Geniş metin hacimlerinde optimize edilmiş prompt mühendisliği</li>
+          <li>Hızlı çıkarım için Replicate API uç noktası köprüsü</li>
+        </ul>
+      </details>
+      <br/>
       <p align="center">
         <a href="https://github.com/YusufBaranYildiz">
           <img src="https://img.shields.io/badge/GitHub-Repository%20%E2%86%92-052FAD?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1B24" alt="Repo"/>
@@ -240,11 +274,17 @@
         <img src="https://img.shields.io/badge/Industrial%20AI-FF6B9D?style=flat-square" />
       </p>
       <p>AIOR Teknoloji bünyesinde geliştirilen; endüstriyel kalite kontrol, yangın algılama, plaka tanıma ve tekstil muayene sistemlerini sunan kurumsal AI platformu.</p>
-      <ul>
-        <li>Görüntü işleme tabanlı endüstriyel hata ve anomali tespiti</li>
-        <li>Ürün özellikleri, teknik blog ve kurumsal vitrin mimarisi</li>
-        <li>Canlıya alınmış ölçeklenebilir web altyapısı</li>
-      </ul>
+      <details>
+        <summary><b>Sistem Mimarisi &amp; Detaylar ▾</b></summary>
+        <br/>
+        <ul>
+          <li>Görüntü işleme tabanlı endüstriyel hata ve anomali tespiti</li>
+          <li>Ürün özellikleri, teknik blog ve kurumsal vitrin mimarisi</li>
+          <li>Canlıya alınmış ölçeklenebilir web altyapısı</li>
+          <li>Kamera akışlarını eşzamanlı izleyen inference pipeline</li>
+        </ul>
+      </details>
+      <br/>
       <p align="center">
         <a href="https://github.com/YusufBaranYildiz">
           <img src="https://img.shields.io/badge/GitHub-Repository%20%E2%86%92-00D9FF?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1B24" alt="Repo"/>
@@ -259,11 +299,17 @@
         <img src="https://img.shields.io/badge/Financial%20AI-10B981?style=flat-square" />
       </p>
       <p>Türkiye genelinde üç aşamalı zorlu elemeyi geçerek 40 kişilik finale yükselinen, KPMG yöneticilerine sunulan veri bilimi ve yatırım tavsiyesi projesi.</p>
-      <ul>
-        <li>Makroekonomik belirsizlik analizi ve zaman serisi modellemesi</li>
-        <li>Yatırım fonu portföy optimizasyonu ve risk projeksiyonu</li>
-        <li>Üst düzey karar alıcılara yönelik analitik vaka sunumu</li>
-      </ul>
+      <details>
+        <summary><b>Sistem Mimarisi &amp; Detaylar ▾</b></summary>
+        <br/>
+        <ul>
+          <li>Makroekonomik belirsizlik analizi ve zaman serisi modellemesi</li>
+          <li>Yatırım fonu portföy optimizasyonu ve risk projeksiyonu</li>
+          <li>Üst düzey karar alıcılara yönelik analitik vaka sunumu</li>
+          <li>Belirsizlik endekslerine göre senaryo simülasyonları</li>
+        </ul>
+      </details>
+      <br/>
       <p align="center">
         <a href="https://github.com/YusufBaranYildiz">
           <img src="https://img.shields.io/badge/GitHub-Profile%20%E2%86%92-FF6B9D?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1B24" alt="Repo"/>

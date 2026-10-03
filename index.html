@@ -87,9 +87,9 @@
     #visualizer-canvas {
       position: fixed;
       bottom: 0; left: 0;
-      width: 100%; height: 90px;
+      width: 100%; height: 140px;
       z-index: 1; pointer-events: none;
-      opacity: 0.45;
+      opacity: 0.85;
     }
 
     .glow-cyan {
@@ -352,8 +352,17 @@
 
     /* Open Modal hint */
     .modal-hint {
-      font-family: 'JetBrains Mono', monospace; font-size: 10px;
-      color: var(--text-muted); text-align: right; margin-top: 8px;
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      font-weight: 700; color: var(--accent-cyan);
+      margin-top: 14px; padding: 6px 12px;
+      border-radius: 8px; background: rgba(0, 217, 255, 0.08);
+      border: 1px dashed rgba(0, 217, 255, 0.35);
+      transition: all 0.2s ease;
+    }
+    .project-card:hover .modal-hint {
+      color: #FFFFFF; background: rgba(0, 217, 255, 0.25);
+      border-style: solid; box-shadow: 0 0 12px rgba(0, 217, 255, 0.3);
     }
 
     /* ============================================================ MODAL */
@@ -551,10 +560,10 @@
 
       <!-- Filter Bar -->
       <div class="filter-bar reveal reveal-delay-2">
-        <button class="filter-btn active" data-filter="all">Tumu</button>
-        <button class="filter-btn" data-filter="AI">AI / ML</button>
-        <button class="filter-btn" data-filter="Web">Web</button>
-        <button class="filter-btn" data-filter="Data">Data Science</button>
+        <button class="filter-btn active" data-filter="all">TÜM PROJELER (6)</button>
+        <button class="filter-btn" data-filter="AI">YAPAY ZEKÂ / AGENT (4)</button>
+        <button class="filter-btn" data-filter="Web">FULL-STACK &amp; WEB (1)</button>
+        <button class="filter-btn" data-filter="Data">VERİ BİLİMİ (1)</button>
       </div>
 
       <div class="projects-grid" id="projectsGrid">
@@ -580,7 +589,7 @@
             </div>
           </div>
           <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Repository Incele &rarr;</a>
-          <div class="modal-hint">klik = detay</div>
+          <div class="modal-hint">Detaylı Modalı Aç ↗</div>
         </article>
 
         <!-- WeatherWise -->
@@ -604,7 +613,7 @@
             </div>
           </div>
           <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Repository Incele &rarr;</a>
-          <div class="modal-hint">klik = detay</div>
+          <div class="modal-hint">Detaylı Modalı Aç ↗</div>
         </article>
 
         <!-- BAP -->
@@ -628,7 +637,7 @@
             </div>
           </div>
           <a class="project-btn" href="https://github.com/YusufBaranYildiz/antalya-belek-proje-surec-yonetimi-v0.5" target="_blank">Repository Incele &rarr;</a>
-          <div class="modal-hint">klik = detay</div>
+          <div class="modal-hint">Detaylı Modalı Aç ↗</div>
         </article>
 
         <!-- IBM Granite -->
@@ -652,7 +661,7 @@
             </div>
           </div>
           <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Repository Incele &rarr;</a>
-          <div class="modal-hint">klik = detay</div>
+          <div class="modal-hint">Detaylı Modalı Aç ↗</div>
         </article>
 
         <!-- kamerakontrol.com -->
@@ -675,7 +684,7 @@
             </div>
           </div>
           <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Platform Detaylari &rarr;</a>
-          <div class="modal-hint">klik = detay</div>
+          <div class="modal-hint">Detaylı Modalı Aç ↗</div>
         </article>
 
         <!-- KPMG IxT -->
@@ -698,7 +707,7 @@
             </div>
           </div>
           <a class="project-btn" href="https://github.com/YusufBaranYildiz" target="_blank">Profil Detaylari &rarr;</a>
-          <div class="modal-hint">klik = detay</div>
+          <div class="modal-hint">Detaylı Modalı Aç ↗</div>
         </article>
 
       </div>
@@ -880,7 +889,7 @@ Ornek komutlar: help, skills, projects, edu, contact, clear</div>
 
     function resizeViz() {
       vizWidth = vizCanvas.width = window.innerWidth;
-      vizHeight = vizCanvas.height = 90;
+      vizHeight = vizCanvas.height = 140;
     }
     window.addEventListener('resize', resizeViz);
     resizeViz();
